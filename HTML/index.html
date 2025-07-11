@@ -417,9 +417,28 @@
             </p>
         </div>
     </footer>
-    <section class="support-icon pulse">
-        <img src="/Social-Icons/whatsapp-icon-seeklogo.png" alt="">
-    </section>
+    <!-- Add this before </body> -->
+    <div class="support-icon pulse" id="supportIcon">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- AI Chat Container (hidden by default) -->
+    <div class="ai-chat-container" id="aiChatContainer">
+        <div class="chat-header">
+            <h3>Travel Assistant</h3>
+            <button class="close-chat" id="closeChat">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="bot-message">
+                <p>Hello! I'm your travel assistant. How can I help you today?</p>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask about destinations...">
+            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
     <script src="/JS/app.js"></script>
 </body>
+
 </html>
