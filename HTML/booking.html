@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - ExploreMore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/booking.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left-item">
+                <h1 class="company-name">ExploreMore</h1>
+            </div>
+            <div class="navbar-center-item">
+                <ul>
+                    <li class="nav-link"><a href="/HTML/index.html">Home</a></li>
+                    <li class="nav-link"><a href="/HTML/index.html#destinations">Destinations</a></li>
+                    <li class="nav-link"><a href="/HTML/index.html#tours">Tours</a></li>
+                    <li class="nav-link"><a href="/HTML/index.html#about">About Us</a></li>
+                    <li class="nav-link"><a href="/HTML/index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right-item">
+                <button class="book-now-btn">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="booking-container">
+        <div class="container">
+            <div class="booking-header">
+                <h1>Book Your Tour</h1>
+                <p class="booking-subheading">Fill in the details to secure your adventure!</p>
+            </div>
+
+            <div class="booking-form-container">
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="tour-name">Tour Name</label>
+                        <input type="text" id="tour-name" name="tour-name" placeholder="Select a tour" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travel-date">Travel Date</label>
+                        <input type="date" id="travel-date" name="travel-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="return-date">Return Date</label>
+                        <input type="date" id="return-date" name="return-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adults">Adults</label>
+                        <input type="number" id="adults" name="adults" min="1" max="10" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children">Children</label>
+                        <input type="number" id="children" name="children" min="0" max="10" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Insurance</label>
+                        <div class="insurance-option">
+                            <input type="checkbox" id="insurance" name="insurance">
+                            <label for="insurance">Add Travel Insurance ($50)</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section footer-brand">
+                <h3 class="footer-logo">ExploreMore</h3>
+                <p class="footer-description">Your gateway to unforgettable adventures and hidden gems across the globe.</p>
+                <div class="footer-social">
+                    <a target="_blank" href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://www.twitter.com" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-all-links">
+                    <li><a href="/HTML/index.html" class="footer-link">Home</a></li>
+                    <li><a href="/HTML/index.html#destinations" class="footer-link">Destinations</a></li>
+                    <li><a href="/HTML/index.html#tours" class="footer-link">Tours</a></li>
+                    <li><a href="/HTML/about-us.html" class="footer-link">About Us</a></li>
+                    <li><a href="/HTML/index.html#contact" class="footer-link">Contact</a></li>
+                    <li><a href="/HTML/travel-blog.html" class="footer-link">Travel Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h4 class="footer-heading">Get in Touch</h4>
+                <p class="contact-info"><i class="fas fa-envelope"></i> <a href="mailto:info@exploremore.com">info@exploremore.com</a></p>
+                <p class="contact-info"><i class="fas fa-phone"></i> +91-123-456-7890</p>
+                <p class="contact-info"><i class="fas fa-map-marker-alt"></i> 123 Adventure Lane, Mumbai, India</p>
+            </div>
+            <div class="footer-section footer-newsletter">
+                <h4 class="footer-heading">Subscribe</h4>
+                <p class="newsletter-text">Stay updated with our latest offers and travel tips!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 ExploreMore. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/JS/app.js"></script>
+</body>
+</html>

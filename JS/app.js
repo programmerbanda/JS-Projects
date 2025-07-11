@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Modal Toggle
   const modals = document.querySelectorAll(".modal");
   const openButtons = document.querySelectorAll(
-    ".login-btn, .signup-btn, .book-btn"
+    ".login-btn, .signup-btn"
   );
   const closeButtons = document.querySelectorAll(".close-btn");
 
@@ -28,6 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target == modal) modal.style.display = "none";
     });
   });
+
+// Booking page navigation
+document.querySelectorAll('.book-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const tourName = button.closest('.tour-card').querySelector('h3').textContent;
+        // Redirect to booking page with tour name (you can pass it via URL or session)
+        window.location.href = `/HTML/booking.html?tour=${encodeURIComponent(tourName)}`;
+    });
+});
+
+// Existing code (if any) remains...
+
+// Destination detail navigation
+document.querySelectorAll('.destination-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const name = card.querySelector('h3').textContent;
+        const location = card.querySelector('.location a').textContent;
+        const image = card.querySelector('img').src;
+        const rating = card.querySelector('.rating').textContent;
+        const price = card.querySelector('.price').textContent;
+        const description = "Discover the wonders of this amazing place with its unique culture and breathtaking views.";
+        const highlights = ["Stunning landscapes", "Rich cultural heritage", "Exciting activities"];
+
+        // Construct URL with query parameters
+        const params = new URLSearchParams({
+            name: encodeURIComponent(name),
+            location: encodeURIComponent(location),
+            image: encodeURIComponent(image),
+            rating: encodeURIComponent(rating),
+            price: encodeURIComponent(price),
+            description: encodeURIComponent(description),
+            highlights: encodeURIComponent(JSON.stringify(highlights))
+        }).toString();
+
+        window.location.href = `/HTML/destination-details.html?${params}`;
+        });
+    });
 
   // Chat Support System
   const supportIcon = document.getElementById("supportIcon");
