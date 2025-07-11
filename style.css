@@ -1,4 +1,4 @@
-:root {
+ :root {
     --color: #191518;
     --background-color:#823687;
     --transition : 0.4s ease;
@@ -52,6 +52,7 @@ body {
 .company-name {
     font-size: 36px;
     cursor: pointer;
+    color: #fce302;
 }
 
 .navbar-center-item ul {
@@ -572,3 +573,60 @@ body {
     color: #00c4cc;
 }
 
+.support-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.support-icon img {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.support-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.support-icon:hover img {
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.support-icon.pulse {
+  animation: pulse 2s infinite;
+}
+
+.support-icon::after {
+  content: "Need help?";
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.support-icon:hover::after {
+  opacity: 1;
+  right: 55px;
+}
