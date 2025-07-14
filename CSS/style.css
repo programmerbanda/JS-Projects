@@ -15,13 +15,9 @@ html {
 }
 
 body {
-  background-image: url(/Images/sunrise-1014712.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
@@ -131,6 +127,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(/Images/sunrise-1014712.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .main-context {
