@@ -10,40 +10,27 @@
 
 <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-left-item">
-                <h1 class="company-name">
-                    ExploreMore
-                </h1>
-            </div>
-            <div class="navbar-center-item">
-                <ul>
-                    <li class="nav-link">
-                        <a href="">Home</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#destinations">Destinations</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#tours">Tours</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#about">About Us</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-right-item">
-                <button class="book-now-btn">
-                    Book Now
-                </button>
-                <button class="login-btn">Login</button>
-                <button class="signup-btn">Sign Up</button>
-            </div>
+    <div class="navbar-container">
+        <div class="navbar-left-item">
+            <h1 class="company-name">ExploreMore</h1>
         </div>
-    </nav>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="navbar-center-item">
+            <ul>
+                <li class="nav-link"><a href="">Home</a></li>
+                <li class="nav-link"><a href="#destinations">Destinations</a></li>
+                <li class="nav-link"><a href="#tours">Tours</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right-item">
+            <button class="book-now-btn pulse">Book Now</button>
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+    </div>
+</nav>
     <main class="main-body">
         <div class="main-body-container">
             <div class="main-context">
@@ -51,7 +38,7 @@
                     Explore the <span class="main-content-text">Unseen,
                         Live</span> the Unexpected.
                 </h1>
-                <button class="explore-now-btn">
+                <button class="explore-now-btn pulse">
                     Explore Now
                 </button>
             </div>
@@ -215,29 +202,6 @@
                 </div>
             </div>
         </section>
-        <section id="about" class="about-section">
-            <h2 class="about-heading">About Us</h2>
-            <p class="about-description">
-                At ExploreMore, we are dedicated to crafting unforgettable adventures.
-                Our mission is to connect you with breathtaking destinations, immersive
-                experiences, and seamless journeys – so you can explore the unseen and live the unexpected.
-            </p>
-
-            <div class="about-highlights">
-                <div class="highlight-box">
-                    <h3>🌍 100+ Destinations</h3>
-                    <p>Handpicked places across the world for all kinds of travelers.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>💬 24/7 Support</h3>
-                    <p>Our team is here round-the-clock to help you anytime, anywhere.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>🤝 Trusted by 1K+ Travelers</h3>
-                    <p>We’ve earned the trust of adventurers globally since 2020.</p>
-                </div>
-            </div>
-        </section>
         <section id="testimonials" class="testimonials-section">
             <div class="section-heading">
                 <p class="tagline">What They Say</p>
@@ -252,30 +216,6 @@
                     <p class="testimonial-text">"Best travel agency I’ve worked with. Highly recommend!"</p>
                     <p class="testimonial-author">- Jane Smith, Dubai</p>
                 </div>
-            </div>
-        </section>
-        <section id="contact" class="contact-section">
-            <h2 class="contact-heading">Contact Us</h2>
-            <p class="contact-subheading">We'd love to hear from you! Reach out with any questions or ideas.</p>
-
-            <div class="contact-container">
-
-                <!-- Left Side: Info -->
-                <div class="contact-info">
-                    <p><strong>📍 Address:</strong> 123 Explorer Lane, Travel City, World</p>
-                    <p><strong>📞 Phone:</strong> +91 9876543210</p>
-                    <p><strong>📧 Email:</strong> info@exploremore.com</p>
-                    <p><strong>⏰ Working Hours:</strong> Mon – Sat, 9 AM – 7 PM</p>
-                </div>
-
-                <!-- Right Side: Form -->
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-
             </div>
         </section>
         <div class="modal" id="auth-modal">
@@ -306,19 +246,14 @@
     </main>
     <footer class="footer">
         <div class="footer-container">
-            <!-- Brand Info -->
             <div class="footer-section footer-brand">
                 <h3 class="footer-logo">ExploreMore</h3>
                 <p class="footer-description">Your gateway to unforgettable adventures and hidden gems across the globe.
                 </p>
-
-                <!-- Trust Badges -->
                 <div class="trust-badges">
                     <img src="/PNG//Trustpilot Logo PNG s.png">
                     <img src="/PNG/TripAdvisor Excellence.png" alt="TripAdvisor Excellence">
                 </div>
-
-                <!-- Social Media -->
                 <div class="footer-social">
                     <a target="_blank" href="https://www/facebook.com" class="social-link"><i
                             class="fab fa-facebook-f"></i></a>
@@ -326,12 +261,10 @@
                             class="fab fa-twitter"></i></a>
                     <a target="_blank" href="https://www.instagram.com" class="social-link"><i
                             class="fab fa-instagram"></i></a>
-                    <a target="_blank" href="https://www.instagram.com" class="social-link"><i
+                    <a target="_blank" href="https://www.linkedin.com" class="social-link"><i
                             class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-
-            <!-- Quick Links -->
             <div class="footer-section footer-links">
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-all-links">
@@ -339,12 +272,10 @@
                     <li><a href="#destinations" class="footer-link">Destinations</a></li>
                     <li><a href="#tours" class="footer-link">Tours</a></li>
                     <li><a target="_blank" href="/HTML/about.html" class="footer-link">About Us</a></li>
-                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                    <li><a target="_blank" href="/HTML/contact.html" class="footer-link">Contact</a></li>
                     <li><a target="_blank" href="/HTML/travel-blog.html" class="footer-link">Travel Blog</a></li>
                 </ul>
             </div>
-
-            <!-- Support Links -->
             <div class="footer-section footer-support">
                 <h4 class="footer-heading">Support</h4>
                 <ul class="footer-all-links">
@@ -354,8 +285,6 @@
                     <li><a target="_blank" href="/HTML/desclaimer.html" class="footer-link">Disclaimer</a></li>
                     <li><a target="_blank" href="/HTML/travel-insurance.html" class="footer-link">Travel Insurance</a></li>
                 </ul>
-
-                <!-- Payment Methods -->
                 <div class="payment-methods">
                     <h5>We Accept</h5>
                     <div class="payment-icons">
@@ -366,15 +295,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Contact Info -->
             <div class="footer-section footer-contact">
                 <h4 class="footer-heading">Get in Touch</h4>
                 <p class="contact-info"><i class="fas fa-envelope"></i> info@exploremore.com</p>
                 <p class="contact-info"><i class="fas fa-phone"></i> +91-123-456-7890</p>
                 <p class="contact-info"><i class="fas fa-map-marker-alt"></i> 123 Adventure Lane, Mumbai, India</p>
-
-                <!-- Live Support -->
                 <div class="live-support">
                     <i class="fas fa-comment-dots"></i>
                     <span>24/7 Live Support</span>
@@ -387,8 +312,6 @@
                     </select>
                 </div>
             </div>
-
-            <!-- Newsletter -->
             <div class="footer-section footer-newsletter">
                 <h4 class="footer-heading">Subscribe</h4>
                 <p class="newsletter-text">Stay updated with our latest offers and travel tips!</p>
@@ -396,8 +319,7 @@
                     <input type="email" placeholder="Enter your email" class="newsletter-input" required>
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
-
-                <!-- App Download -->
+                <div class="subscription-message" id="subscriptionMessage"></div>
                 <div class="download-app">
                     <h5>Download Our App</h5>
                     <div class="app-stores">
@@ -407,8 +329,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Footer Bottom -->
         <div class="footer-bottom">
             <p class="footer-copyright">© 2025 ExploreMore. All rights reserved.
             </p>

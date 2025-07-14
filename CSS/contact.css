@@ -1,0 +1,147 @@
+:root {
+    --primary-color: #00c4cc;
+    --secondary-color: #0077ff;
+    --text-color: #060606;
+    --bg-color: url('/Images/sunrise-1014712.jpg') no-repeat center center fixed;
+    --container-width: 1200px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-heading .tagline {
+    color: #00c4cc;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-heading .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-subheading {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 260px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    align-items: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.contact-info strong {
+    color: #333;
+    margin-right: 10px;
+    min-width: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 260px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00c4cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 196, 204, 0.1);
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #00c4cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #00a3af;
+    transform: translateY(-2px);
+}

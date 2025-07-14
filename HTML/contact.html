@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Blog - ExploreMore</title>
+    <title>Contact Us - ExploreMore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/CSS/travel-blog.css">
+    <link rel="stylesheet" href="/CSS/contact.css">
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
@@ -31,48 +31,29 @@
         </div>
     </div>
 </nav>
-
-    <main class="blog-container">
-        <div class="container">
-            <div class="blog-header">
-                <h1>Travel Blog</h1>
-                <p class="blog-subheading">Discover stories, tips, and inspiration from around the world.</p>
+    <main class="main-body">
+        <section id="contact" class="contact-section">
+            <div class="section-heading">
+                <p class="tagline">Get in Touch</p>
+                <h2 class="title">Contact Us</h2>
             </div>
-
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <img src="/Images/switzerland.jpg" alt="Swiss Alps Adventure">
-                    <div class="blog-content">
-                        <h2>Exploring the Swiss Alps</h2>
-                        <p class="blog-meta">Posted on July 5, 2025 by John Doe</p>
-                        <p>A breathtaking journey through the Swiss Alps, filled with stunning views, cozy chalets, and thrilling hikes. Discover the best routes and hidden gems!</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post">
-                    <img src="/Images/venice-3183168.jpg" alt="Venice Canals">
-                    <div class="blog-content">
-                        <h2>The Magic of Venice</h2>
-                        <p class="blog-meta">Posted on July 3, 2025 by Jane Smith</p>
-                        <p>Experience the charm of Venice with its iconic canals, historic architecture, and delicious cuisine. A must-visit for every traveler!</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-
-                <article class="blog-post">
-                    <img src="/Images/kerala.jpg" alt="Kerala Backwaters">
-                    <div class="blog-content">
-                        <h2>Serenity in Kerala Backwaters</h2>
-                        <p class="blog-meta">Posted on July 1, 2025 by Ravi Kumar</p>
-                        <p>Relax and rejuvenate with a houseboat ride through Kerala’s serene backwaters. Learn about the local culture and natural beauty.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
+            <p class="contact-subheading">We'd love to hear from you! Reach out with any questions or ideas.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> 123 Adventure Lane, Mumbai, India</p>
+                    <p><strong><i class="fas fa-phone"></i> Phone:</strong> +91-123-456-7890</p>
+                    <p><strong><i class="fas fa-envelope"></i> Email:</strong> info@exploremore.com</p>
+                    <p><strong><i class="fas fa-clock"></i> Working Hours:</strong> Mon – Sat, 9 AM – 7 PM</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required aria-label="Your name"/>
+                    <input type="email" name="email" placeholder="Your Email" required aria-label="Your email"/>
+                    <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your message"></textarea>
+                    <button type="submit" aria-label="Send message">Send Message</button>
+                </form>
             </div>
-        </div>
+        </section>
     </main>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section footer-brand">
@@ -125,10 +106,6 @@
                 </div>
             </div>
             <div class="footer-section footer-contact">
-                <h4 class="footer-heading">Get in Touch</h4>
-                <p class="contact-info"><i class="fas fa-envelope"></i> info@exploremore.com</p>
-                <p class="contact-info"><i class="fas fa-phone"></i> +91-123-456-7890</p>
-                <p class="contact-info"><i class="fas fa-map-marker-alt"></i> 123 Adventure Lane, Mumbai, India</p>
                 <div class="live-support">
                     <i class="fas fa-comment-dots"></i>
                     <span>24/7 Live Support</span>

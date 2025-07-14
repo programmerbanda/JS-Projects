@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".navbar-center-item");
+    const bookBtn = document.querySelector(".navbar-right-item")
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        bookBtn.classList.toggle("active");
+    });
+    document.querySelectorAll(".nav-link a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            bookBtn.classList.remove("active");
+        });
+    });
+    document.addEventListener("click", (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove("active");
+            bookBtn.classList.remove("active");
+        }
+    });
   // Modal Toggle
   const modals = document.querySelectorAll(".modal");
   const openButtons = document.querySelectorAll(
@@ -180,4 +199,26 @@ document.querySelectorAll('.destination-card').forEach(card => {
   userInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") sendMessageHandler();
   });
+});
+
+
+document.querySelector('.newsletter-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    const emailInput = document.querySelector('.newsletter-input');
+    const messageDiv = document.querySelector('#subscriptionMessage');
+    const email = emailInput.value.trim();
+    emailInput.value = "";
+
+    if (email.includes('@') && email.includes('.')) {
+        messageDiv.textContent = `Success! You are subscribed with ${email}.`;
+        messageDiv.className = 'subscription-message success';
+    } else {
+        messageDiv.textContent = 'Failure! Please enter a valid email address.';
+        messageDiv.className = 'subscription-message failure';
+    }
+    messageDiv.style.display = 'block';
+
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 3000);
 });
