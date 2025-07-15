@@ -1,0 +1,348 @@
+:root {
+    --primary-blue: #4169e1;
+    --accent-cyan: #00c4cc;
+    --text-dark: #333;
+    --text-muted: #444;
+}
+
+.offers-section,
+.destinations-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Fallback for backdrop-filter */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .offers-section,
+    .destinations-section {
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.promo-banner {
+    background-color: var(--accent-cyan);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.section-heading .tagline {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.section-heading .title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.offers-subheading,
+.destinations-subheading {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+/* .offers-container,
+.destinations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    justify-content: center;
+} */
+
+.offers-container{
+  display: flex;
+  gap: 20px
+}
+
+.destinations-container {
+  display: flex;
+  gap: 20px
+}
+
+.offer-card,
+.destination-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.offer-card:hover,
+.destination-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.offer-card img,
+.destination-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover img,
+.destination-card:hover img {
+    transform: scale(1.05);
+}
+
+.offer-content,
+.destination-content {
+    padding: 16px;
+}
+
+.offer-content h3,
+.destination-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.offer-content p,
+.destination-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.destination-rating {
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.offer-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 8px;
+    color: var(--text-muted);
+}
+
+.offer-info del {
+    color: #888;
+    margin-left: 4px;
+}
+
+.offer-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.countdown {
+    font-size: 14px;
+    color: #e63946;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.rating {
+    font-size: 14px;
+    color: #f39c12;
+    margin-top: 8px;
+}
+
+.rating span {
+    color: var(--text-muted);
+    margin-left: 6px;
+}
+
+.book-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-btn:hover {
+    background-color: #375de7;
+    transform: scale(1.02);
+}
+
+.book-btn:focus {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-cyan);
+    transform: scale(1.05);
+}
+
+.filter-btn:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .offers-section,
+    .destinations-section {
+        padding: 40px 16px;
+        margin: 40px auto;
+    }
+
+    .section-heading .title {
+        font-size: 24px;
+    }
+
+    .offers-subheading,
+    .destinations-subheading {
+        font-size: 14px;
+    }
+
+    .offer-card,
+    .destination-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .filter-bar {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .promo-banner {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading .title {
+        font-size: 20px;
+    }
+
+    .offers-subheading,
+    .destinations-subheading {
+        font-size: 13px;
+    }
+
+    .offer-card,
+    .destination-card {
+        max-width: 280px;
+    }
+
+    .offer-content h3,
+    .destination-content h3 {
+        font-size: 16px;
+    }
+
+    .offer-content p,
+    .destination-content p {
+        font-size: 13px;
+    }
+
+    .offer-info,
+    .countdown,
+    .rating {
+        font-size: 13px;
+    }
+
+    .book-btn {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .offer-badge {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .promo-banner {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    .offer-card,
+    .destination-card {
+        max-width: 100%;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .offers-container,
+    .destinations-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}

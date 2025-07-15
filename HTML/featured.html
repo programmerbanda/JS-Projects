@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Experiences - ExploreMore</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="/CSS/featured.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left-item">
+        <h1 class="company-name">ExploreMore</h1>
+      </div>
+      <div class="hamburger" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="navbar-center-item">
+        <ul>
+          <li class="nav-link"><a href="/index.html">Home</a></li>
+          <li class="nav-link"><a href="/index.html#destinations">Destinations</a></li>
+          <li class="nav-link"><a href="/tours.html">Tours</a></li>
+        </ul>
+      </div>
+      <div class="navbar-right-item">
+        <button class="book-now-btn pulse" data-modal="booking" aria-label="Book a tour">Book Now</button>
+        <button class="login-btn" data-modal="auth" aria-label="Log in">Login</button>
+        <button class="signup-btn" data-modal="auth" aria-label="Sign up">Sign Up</button>
+      </div>
+    </div>
+  </nav>
+  <main class="main-body">
+    <!-- Limited-Time Offers Section -->
+    <section id="limited-offers" class="offers-section">
+      <div class="promo-banner">
+        <p>Summer Sale: Up to 30% Off! Book Now!</p>
+      </div>
+      <div class="section-heading">
+        <p class="tagline">Hurry, Limited Time!</p>
+        <h2 class="title">Exclusive Offers</h2>
+      </div>
+      <p class="offers-subheading">Grab these deals before they’re gone!</p>
+      <div class="offers-container">
+        <div class="offer-card">
+          <span class="offer-badge">Limited Offer</span>
+          <img src="/Tour-images/goa.avif" alt="Goa Beach Getaway">
+          <div class="offer-content">
+            <h3>Goa Beach Getaway</h3>
+            <p>Relax in luxury with a 3-day beach escape.</p>
+            <div class="offer-info">
+              <span>⏱️ 3 Days</span>
+              <span>💰 $599 <del>$799</del></span>
+            </div>
+            <div class="countdown" data-end-date="2025-07-31T23:59:59" aria-live="polite">
+              <span>Ends in: </span>
+              <span class="countdown-timer"></span>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Goa Beach Getaway">Book Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <span class="offer-badge">Limited Offer</span>
+          <img src="/Tour-images/mountain.jfif" alt="Himalayan Adventure">
+          <div class="offer-content">
+            <h3>Himalayan Adventure</h3>
+            <p>Trek the Himalayas with a 20% discount.</p>
+            <div class="offer-info">
+              <span>⏱️ 5 Days</span>
+              <span>💰 $960 <del>$1200</del></span>
+            </div>
+            <div class="countdown" data-end-date="2025-07-31T23:59:59" aria-live="polite">
+              <span>Ends in: </span>
+              <span class="countdown-timer"></span>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Himalayan Adventure">Book Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <span class="offer-badge">Limited Offer</span>
+          <img src="/Images/kerala.jpg" alt="Goa Beach Getaway">
+          <div class="offer-content">
+            <h3>Kerala Blackwaters</h3>
+            <p>Cruise through serene backwaters and lush greenery.</p>
+            <div class="offer-info">
+              <span>⏱️ 3 Days</span>
+              <span>💰 $699 <del>$999</del></span>
+            </div>
+            <div class="countdown" data-end-date="2025-07-31T23:59:59" aria-live="polite">
+              <span>Ends in: </span>
+              <span class="countdown-timer"></span>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Goa Beach Getaway">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Popular Destinations Section -->
+    <section id="popular-destinations" class="destinations-section">
+      <div class="section-heading">
+        <p class="tagline">Top Picks</p>
+        <h2 class="title">Popular Destinations</h2>
+      </div>
+      <p class="destinations-subheading">Explore our most loved travel destinations.</p>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" tabindex="0" aria-label="Show all destinations">All</button>
+        <button class="filter-btn" data-filter="beach" tabindex="0" aria-label="Show beach destinations">Beach</button>
+        <button class="filter-btn" data-filter="mountain" tabindex="0"
+          aria-label="Show mountain destinations">Mountain</button>
+        <button class="filter-btn" data-filter="cultural" tabindex="0"
+          aria-label="Show cultural destinations">Cultural</button>
+        <button class="filter-btn" data-filter="wildlife" tabindex="0"
+          aria-label="Show wildlife destinations">Wildlife</button>
+      </div>
+      <div class="destinations-container">
+        <div class="destination-card" data-category="cultural">
+          <img src="/Tour-images/rajasthan.avif" alt="Rajasthan Cultural Tour">
+          <div class="destination-content">
+            <h3>Rajasthan Cultural Tour</h3>
+            <p>Immerse in the vibrant culture and heritage of Rajasthan.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5/5)</span>
+              <a class="destination-rating" href="">9347 ratings</a>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Rajasthan Cultural Tour">Book Now</button>
+          </div>
+        </div>
+        <div class="destination-card" data-category="beach">
+          <img src="/Tour-images/Wildlife Safari.avif" alt="Kerala Backwaters">
+          <div class="destination-content">
+            <h3>Kerala Backwaters</h3>
+            <p>Cruise through serene backwaters and lush greenery.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5/5)</span>
+              <a class="destination-rating" href="">34782 ratings</a>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Kerala Backwaters Tour">Book Now</button>
+          </div>
+        </div>
+        <div class="destination-card" data-category="wildlife">
+          <img src="/Tour-images/Jungle Expedition.avif" alt="Wildlife Safari">
+          <div class="destination-content">
+            <h3>Wildlife Safari</h3>
+            <p>Discover the wild in Jim Corbett, Ranthambore, or Kaziranga.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5/5)</span>
+              <a class="destination-rating" href="">37729 ratings</a>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Wildlife Safari Tour">Book Now</button>
+          </div>
+        </div>
+        <div class="destination-card" data-category="mountain">
+          <img src="/Tour-images/Hiking & Trekking Tour.jpg" alt="Ladakh Expedition">
+          <div class="destination-content">
+            <h3>Ladakh Expedition</h3>
+            <p>Explore rugged terrains and monasteries in Ladakh.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(5/5)</span>
+              <a class="destination-rating" href="">27980 ratings</a>
+            </div>
+            <button class="book-btn" data-modal="booking" aria-label="Book Ladakh Expedition Tour">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal" id="auth-modal">
+      <div class="modal-content">
+        <span class="close-btn" aria-label="Close modal">×</span>
+        <h2>Login</h2>
+        <form class="auth-form">
+          <input type="email" placeholder="Email" required aria-label="Email">
+          <input type="password" placeholder="Password" required aria-label="Password">
+          <button type="submit" aria-label="Log in">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup.html" class="switch-auth">Sign Up</a></p>
+      </div>
+    </div>
+    <div class="modal" id="booking-modal">
+      <div class="modal-content">
+        <span class="close-btn" aria-label="Close modal">×</span>
+        <h2>Book Your Tour</h2>
+        <form class="booking-form">
+          <input type="text" placeholder="Full Name" required aria-label="Full name">
+          <input type="email" placeholder="Email" required aria-label="Email">
+          <input type="date" required aria-label="Travel date">
+          <input type="number" placeholder="Number of People" min="1" required aria-label="Number of people">
+          <button type="submit" aria-label="Confirm booking">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section footer-brand">
+        <h3 class="footer-logo">ExploreMore</h3>
+        <p class="footer-description">Your gateway to unforgettable adventures and hidden gems across the globe.</p>
+        <div class="trust-badges">
+          <img src="/PNG/Trustpilot Logo PNG s.png" alt="Trustpilot badge">
+          <img src="/PNG/TripAdvisor Excellence.png" alt="TripAdvisor Excellence badge">
+        </div>
+        <div class="footer-social">
+          <a target="_blank" href="https://www.facebook.com" class="social-link" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://www.twitter.com" class="social-link" aria-label="Twitter"><i
+              class="fab fa-twitter"></i></a>
+          <a target="_blank" href="https://www.instagram.com" class="social-link" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a target="_blank" href="https://www.linkedin.com" class="social-link" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section footer-links">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-all-links">
+          <li><a href="/index.html" class="footer-link">Home</a></li>
+          <li><a href="/index.html#destinations" class="footer-link">Destinations</a></li>
+          <li><a href="/tours.html" class="footer-link">Tours</a></li>
+          <li><a target="_blank" href="/HTML/about.html" class="footer-link">About Us</a></li>
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a target="_blank" href="/HTML/travel-blog.html" class="footer-link">Travel Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-support">
+        <h4 class="footer-heading">Support</h4>
+        <ul class="footer-all-links">
+          <li><a target="_blank" href="/HTML/faq.html" class="footer-link">FAQ</a></li>
+          <li><a target="_blank" href="/HTML/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a target="_blank" href="/HTML/terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
+          <li><a target="_blank" href="/HTML/desclaimer.html" class="footer-link">Disclaimer</a></li>
+          <li><a target="_blank" href="/HTML/travel-insurance.html" class="footer-link">Travel Insurance</a></li>
+        </ul>
+        <div class="payment-methods">
+          <h5>We Accept</h5>
+          <div class="payment-icons">
+            <img src="/PNG/visa-icon.svg" alt="Visa payment">
+            <img src="/PNG/master-card-icon.svg" alt="Mastercard payment">
+            <img src="/PNG/american-express.svg" alt="American Express payment">
+            <img src="/PNG/bhim-app-icon.svg" alt="UPI payment">
+          </div>
+        </div>
+      </div>
+      <div class="footer-section footer-contact">
+        <h4 class="footer-heading">Get in Touch</h4>
+        <p class="contact-info"><i class="fas fa-envelope"></i> info@exploremore.com</p>
+        <p class="contact-info"><i class="fas fa-phone"></i> +91-123-456-7890</p>
+        <p class="contact-info"><i class="fas fa-map-marker-alt"></i> 123 Adventure Lane, Mumbai, India</p>
+        <div class="live-support">
+          <i class="fas fa-comment-dots"></i>
+          <span>24/7 Live Support</span>
+        </div>
+        <div class="language-switcher">
+          <select aria-label="Select language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+          </select>
+        </div>
+      </div>
+      <div class="footer-section footer-newsletter">
+        <h4 class="footer-heading">Subscribe</h4>
+        <p class="newsletter-text">Stay updated with our latest offers and travel tips!</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="newsletter-input" required
+            aria-label="Email for newsletter">
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">Subscribe</button>
+        </form>
+        <div class="subscription-message" id="subscriptionMessage"></div>
+        <div class="download-app">
+          <h5>Download Our App</h5>
+          <div class="app-stores">
+            <a target="_blank" href="https://play.google.com/" aria-label="Download from Google Play"><img
+                src="/PNG/google-play-svgrepo-com.svg" alt="Google Play Store"></a>
+            <a target="_blank" href="https://www.apple.com/in/app-store/" aria-label="Download from App Store"><img
+                src="/PNG/app-store-svgrepo-com.svg" alt="Apple App Store"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 ExploreMore. All rights reserved.</p>
+    </div>
+  </footer>
+  <div class="support-icon pulse" id="supportIcon" aria-label="Open travel assistant chat">
+    <i class="fas fa-robot"></i>
+  </div>
+  <div class="ai-chat-container" id="aiChatContainer">
+    <div class="chat-header">
+      <h3>Travel Assistant</h3>
+      <button class="close-chat" id="closeChat" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="bot-message">
+        <p>Hello! I'm your travel assistant. How can I help you today?</p>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask about destinations..." aria-label="Chat input">
+      <button id="sendMessage" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+  <script src="/JS/app.js"></script>
+  <script src="/JS/featured.js"></script>
+</body>
+
+</html>

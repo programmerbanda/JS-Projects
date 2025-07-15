@@ -21,7 +21,7 @@
             <ul>
                 <li class="nav-link"><a href="/HTML/index.html">Home</a></li>
                 <li class="nav-link"><a href="#destinations">Destinations</a></li>
-                <li class="nav-link"><a href="#tours">Tours</a></li>
+                <li class="nav-link tours-button"><a href="/HTML/tours.html">Tours</a></li>
             </ul>
         </div>
         <div class="navbar-right-item">
@@ -204,5 +204,40 @@
         </div>
     </div>
     <script src="/JS/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get the stored tour data
+    const storedTour = localStorage.getItem('selectedTour');
+    
+    if (storedTour) {
+        const tour = JSON.parse(storedTour);
+        const tourDisplay = document.getElementById('selectedTourDisplay');
+        const tourNameInput = document.getElementById('tour-name');
+        
+        // Create and display tour info
+        tourDisplay.innerHTML = `
+            <div class="selected-tour-card">
+                <img src="${tour.image}" alt="${tour.name}" class="selected-tour-image">
+                <div class="selected-tour-info">
+                    <h3>${tour.name}</h3>
+                    <p><strong>Duration:</strong> ${tour.duration}</p>
+                    <p><strong>Price:</strong> ${tour.price}</p>
+                </div>
+            </div>
+        `;
+        
+        // Set the tour name in the form
+        tourNameInput.value = tour.name;
+        
+        // Clear the stored data (optional)
+        localStorage.removeItem('selectedTour');
+    } else {
+        // Handle case where no tour was selected (direct navigation)
+        document.getElementById('selectedTourDisplay').innerHTML = `
+            <p>No tour selected. Please choose a tour from our <a href="/HTML/tours.html">tours page</a>.</p>
+        `;
+    }
+});
+    </script>
 </body>
 </html>

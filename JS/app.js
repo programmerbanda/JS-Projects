@@ -75,6 +75,20 @@ if(companyName){
   })
 }
 
+const toursButton = document.querySelector('.tours-button');
+if(toursButton){
+  toursButton.addEventListener('click', ()=> {
+    window.location.href = 'tours.html';
+  })
+};
+
+const exploreButton = document.querySelector('.explore-now-btn');
+if(exploreButton){
+  exploreButton.addEventListener('click', ()=> {
+    window.location.href = 'featured.html';
+  })
+}
+
 // Existing code (if any) remains...
 
 // Destination detail navigation

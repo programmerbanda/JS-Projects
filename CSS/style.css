@@ -1,5 +1,5 @@
 :root {
-  --color: #191518;
+  --color: #ffffff;
   --background-color: #823687;
   --transition: all 0.4s ease;
 }
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #414151;
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -27,7 +27,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: #1a252f;
   height: 70px;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ body {
   transition: background 0.3s;
 }
 .book-now-btn {
-  background: #fff;
+  background: linear-gradient(135deg, #00c4cc, #0077ff);
   color: var(--color);
 }
 
@@ -177,7 +177,7 @@ body {
 .top-destinations {
   padding: 50px 20px;
   max-width: 78%;
-  margin: auto;
+  margin: 60px auto 0px auto;
   background-color: transparent;
   backdrop-filter: blur(4px);
   border-radius: 20px;
