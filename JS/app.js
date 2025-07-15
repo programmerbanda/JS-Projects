@@ -56,6 +56,25 @@ document.querySelectorAll('.book-btn').forEach(button => {
     });
 });
 
+const bookButton = document.querySelector('.book-now-btn');
+bookButton.addEventListener('click', ()=> {
+  window.location.href = 'booking.html'
+});
+
+const homeButton = document.querySelector('.home-button');
+if(homeButton){
+  homeButton.addEventListener('click', ()=> {
+    window.location.href = 'index.html';
+  })
+}
+
+const companyName = document.querySelector('.company-name');
+if(companyName){
+  companyName.addEventListener('click', ()=> {
+    window.location.href = 'index.html'
+  })
+}
+
 // Existing code (if any) remains...
 
 // Destination detail navigation
