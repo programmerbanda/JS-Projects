@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #9898a4;
+  background: #fff;
   width: 100%;
   min-height: 100%;
   margin: 0;
@@ -50,7 +50,7 @@ body {
 .company-name {
   font-size: 36px;
   cursor: pointer;
-  color: #fce302;
+  color: #00c4cc;
 }
 
 .navbar-center-item ul {
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-link:hover {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;;
+  box-shadow: #0077ff 0px 1px 2px 0px, #00c4cc 0px 1px 3px 1px;
 }
 
 .nav-link a {
@@ -169,20 +169,15 @@ body {
   color: #ffffff;
   font-weight: 600;
   transition: var(--transition);
-  background-color: rgb(122, 146, 154);
+  background: linear-gradient(135deg, #00c4cc, #0077ff);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .top-destinations {
-  padding: 50px 20px;
-  max-width: 78%;
-  margin: 60px auto 0px auto;
-  background-color: transparent;
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  box-shadow: rgba(50, 50, 93, 0.75) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px 20px;
+  max-width: 100%;
+  background-color: #ffffff;
 }
 
 .section-heading {
@@ -216,6 +211,7 @@ body {
   overflow: hidden;
   transition: var(--transition);
   border: 2px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .destination-card:hover {
@@ -269,14 +265,9 @@ body {
 }
 
 .tours-section {
-  padding: 50px 20px;
-  max-width: 90%;
-  margin: auto;
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  margin-top: 60px;
-  box-shadow: rgba(50, 50, 93, 0.75) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px 20px;
+  max-width: 100%;
+  background-color: #ffffff;
 }
 
 .tours-container {
@@ -284,6 +275,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  
 }
 
 .tour-card:hover {
@@ -296,8 +288,8 @@ body {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .tour-card img {
@@ -336,13 +328,9 @@ body {
 }
 
 .blog-section {
-  padding: 50px 20px;
-  max-width: 90%;
-  margin: 60px auto;
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  box-shadow: rgba(50, 50, 93, 0.75) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px 20px;
+  max-width: 100%;
+  background-color: #ffffff;
 }
 
 .blog-container {
@@ -353,11 +341,17 @@ body {
 }
 
 .blog-card {
-  width: 300px;
+  width: 280px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .blog-card img {
@@ -385,13 +379,9 @@ body {
 }
 
 .testimonials-section {
-  padding: 50px 20px;
-  max-width: 90%;
-  margin: 60px auto;
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  box-shadow: rgba(50, 50, 93, 0.75) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 30px 20px;
+  max-width: 100%;
+  background-color: #fff;
 }
 
 .testimonials-container {
@@ -402,16 +392,21 @@ body {
 }
 
 .testimonial-card {
-  width: 300px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 280px;
   padding: 20px;
   border-radius: 12px;
-  color: #fff;
+  color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .testimonial-text {
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.author-info img {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .testimonial-author {
@@ -947,6 +942,7 @@ body {
 
 .newsletter-form {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-top: 15px;
 }
@@ -1015,7 +1011,7 @@ body {
     left: 0;
     width: 100%;
     background: #2a7b9b;
-    background: linear-gradient(90deg, #45a7cd 7%, #86cfa4 55%, #d0cc7b 100%);
+    background: linear-gradient(135deg, #00c4cc, #0077ff);
     backdrop-filter: blur(100px);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
@@ -1088,7 +1084,7 @@ body {
     flex-direction: column;
   } 
   .ai-chat-container {
-    height: 400px;
+    height: 300px;
     width: 250px;
   }
 }

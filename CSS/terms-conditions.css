@@ -33,7 +33,7 @@ body {
 }
 
 .terms-subheading {
-    color: #fff;
+    color: var(--text-color);
     font-size: 16px;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .terms-section {
-    background: rgba(26, 37, 47, 0.8);
+    background: #1a252f;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;

@@ -32,7 +32,7 @@ body {
 }
 
 .insurance-subheading {
-    color: #fff;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .insurance-section {
-    background: rgba(26, 37, 47, 0.8);
+    background: #1a252f;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;

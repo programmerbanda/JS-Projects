@@ -1,7 +1,7 @@
 :root {
     --primary-blue: #4169e1;
     --accent-cyan: #00c4cc;
-    --text-dark: #333;
+    --text-dark: #000000;
     --text-muted: #444;
 }
 
@@ -13,7 +13,7 @@
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     text-align: center;
-    color: #fff;
+    color: #000000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     /* Fallback for backdrop-filter */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
@@ -29,7 +29,7 @@
 
 .promo-banner {
     background-color: var(--accent-cyan);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -90,7 +90,7 @@
 
 .offer-card,
 .destination-card {
-    background: white;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

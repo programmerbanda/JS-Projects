@@ -42,7 +42,7 @@ body {
 }
 
 .faq-item {
-    background: rgba(26, 37, 47, 0.8);
+    background: #1a252f;
     border-radius: 8px;
     margin-bottom: 15px;
     overflow: hidden;

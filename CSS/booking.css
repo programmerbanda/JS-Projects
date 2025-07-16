@@ -20,6 +20,11 @@ body {
 .booking-container {
     padding: 70px 0 40px;
     min-height: calc(100vh - 70px);
+    background-image: url(/Tour-images/dubai4k.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .booking-header {
@@ -33,14 +38,15 @@ body {
 }
 
 .booking-subheading {
-    color: #fff;
+    color: #ffffff;
     font-size: 16px;
 }
 
 .booking-form-container {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(26, 37, 47, 0.8);
+    background: transparent;
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
