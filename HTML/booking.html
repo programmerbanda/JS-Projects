@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,30 @@
     <link rel="stylesheet" href="/CSS/booking.css">
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
+
 <body>
     <nav class="navbar">
-    <div class="navbar-container">
-        <div class="navbar-left-item">
-            <h1 class="company-name">ExploreMore</h1>
+        <div class="navbar-container">
+            <div class="navbar-left-item">
+                <h1 class="company-name">ExploreMore</h1>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-center-item">
+                <ul>
+                    <li class="nav-link home-button"><a href="/HTML/index.html">Home</a></li>
+                    <li class="nav-link"><a href="#destinations">Destinations</a></li>
+                    <li class="nav-link tours-button"><a href="/HTML/tours.html">Tours</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right-item">
+                <button class="book-now-btn pulse">Book Now</button>
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
         </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="navbar-center-item">
-            <ul>
-                <li class="nav-link home-button"><a href="/HTML/index.html">Home</a></li>
-                <li class="nav-link"><a href="#destinations">Destinations</a></li>
-                <li class="nav-link tours-button"><a href="/HTML/tours.html">Tours</a></li>
-            </ul>
-        </div>
-        <div class="navbar-right-item">
-            <button class="book-now-btn pulse">Book Now</button>
-            <button class="login-btn">Login</button>
-            <button class="signup-btn">Sign Up</button>
-        </div>
-    </div>
-</nav>
+    </nav>
 
     <main class="booking-container">
         <div class="container">
@@ -132,9 +134,11 @@
                 <ul class="footer-all-links">
                     <li><a target="_blank" href="/HTML/faq.html" class="footer-link">FAQ</a></li>
                     <li><a target="_blank" href="/HTML/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-                    <li><a target="_blank" href="/HTML/terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
+                    <li><a target="_blank" href="/HTML/terms-conditions.html" class="footer-link">Terms & Conditions</a>
+                    </li>
                     <li><a target="_blank" href="/HTML/desclaimer.html" class="footer-link">Disclaimer</a></li>
-                    <li><a target="_blank" href="/HTML/travel-insurance.html" class="footer-link">Travel Insurance</a></li>
+                    <li><a target="_blank" href="/HTML/travel-insurance.html" class="footer-link">Travel Insurance</a>
+                    </li>
                 </ul>
                 <div class="payment-methods">
                     <h5>We Accept</h5>
@@ -174,8 +178,10 @@
                 <div class="download-app">
                     <h5>Download Our App</h5>
                     <div class="app-stores">
-                        <a target="_blank" href="https://play.google.com/"><img src="/PNG/google-play-svgrepo-com.svg" alt="Google Play"></a>
-                        <a target="_blank" href="https://www.apple.com/in/app-store/"><img src="/PNG/app-store-svgrepo-com.svg" alt="App Store"></a>
+                        <a target="_blank" href="https://play.google.com/"><img src="/PNG/google-play-svgrepo-com.svg"
+                                alt="Google Play"></a>
+                        <a target="_blank" href="https://www.apple.com/in/app-store/"><img
+                                src="/PNG/app-store-svgrepo-com.svg" alt="App Store"></a>
                     </div>
                 </div>
             </div>
@@ -204,40 +210,6 @@
         </div>
     </div>
     <script src="/JS/app.js"></script>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Get the stored tour data
-    const storedTour = localStorage.getItem('selectedTour');
-    
-    if (storedTour) {
-        const tour = JSON.parse(storedTour);
-        const tourDisplay = document.getElementById('selectedTourDisplay');
-        const tourNameInput = document.getElementById('tour-name');
-        
-        // Create and display tour info
-        tourDisplay.innerHTML = `
-            <div class="selected-tour-card">
-                <img src="${tour.image}" alt="${tour.name}" class="selected-tour-image">
-                <div class="selected-tour-info">
-                    <h3>${tour.name}</h3>
-                    <p><strong>Duration:</strong> ${tour.duration}</p>
-                    <p><strong>Price:</strong> ${tour.price}</p>
-                </div>
-            </div>
-        `;
-        
-        // Set the tour name in the form
-        tourNameInput.value = tour.name;
-        
-        // Clear the stored data (optional)
-        localStorage.removeItem('selectedTour');
-    } else {
-        // Handle case where no tour was selected (direct navigation)
-        document.getElementById('selectedTourDisplay').innerHTML = `
-            <p>No tour selected. Please choose a tour from our <a href="/HTML/tours.html">tours page</a>.</p>
-        `;
-    }
-});
-    </script> -->
 </body>
+
 </html>
