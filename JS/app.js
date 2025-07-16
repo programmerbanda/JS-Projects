@@ -89,6 +89,13 @@ if(exploreButton){
   })
 }
 
+const destinationButton = document.querySelector('.destination-button');
+if(destinationButton){
+  destinationButton.addEventListener('click', ()=> {
+    window.location.href = 'featured.html'
+  })
+}
+
 // Existing code (if any) remains...
 
 // Destination detail navigation

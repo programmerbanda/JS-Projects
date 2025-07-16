@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     updateCountdown();
-    setInterval(updateCountdown, 60); // Update every minute
+    setInterval(updateCountdown, 1000);
 
     // Category Filter
     const filterButtons = document.querySelectorAll('.filter-btn');

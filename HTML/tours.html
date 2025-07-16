@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/tours.css">
+    <link rel="stylesheet" href="/CSS/search.css">
 </head>
 <body>
     <nav class="navbar">
@@ -20,7 +21,7 @@
         <div class="navbar-center-item">
             <ul>
                 <li class="nav-link home-button"><a href="#main-page">Home</a></li>
-                <li class="nav-link"><a href="#destinations">Destinations</a></li>
+                <li class="nav-link destination-button"><a href="#destinations">Destinations</a></li>
                 <li class="nav-link tours-button"><a href="#tours">Tours</a></li>
             </ul>
         </div>
@@ -30,7 +31,44 @@
             <button class="signup-btn">Sign Up</button>
         </div>
     </div>
-</nav>
+    </nav>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search tours, destinations...">
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-filters">
+            <select class="filter-category">
+                <option value="">All Categories</option>
+                <option value="adventure">Adventure</option>
+                <option value="beach">Beach</option>
+                <option value="cultural">Cultural</option>
+                <option value="mountain">Mountain</option>
+                <option value="city">City</option>
+                <option value="cruise">Cruise</option>
+                <option value="desert">Desert</option>
+                <option value="island">Island</option>
+            </select>
+            <select class="filter-price">
+                <option value="">All Prices</option>
+                <option value="0-1000">$0 - $1000</option>
+                <option value="1000-2000">$1000 - $2000</option>
+                <option value="2000+">$2000+</option>
+            </select>
+            <select class="filter-duration">
+                <option value="">All Durations</option>
+                <option value="1-3">1-3 Days</option>
+                <option value="4-7">4-7 Days</option>
+                <option value="8+">8+ Days</option>
+            </select>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+    
     <main class="main-body">
         <section id="tours" class="tours-section">
             <div class="section-heading">
@@ -359,5 +397,6 @@
         </div>
     </div>
     <script src="/JS/app.js"></script>
+    <script src="/JS/search.js"></script>
 </body>
 </html>
