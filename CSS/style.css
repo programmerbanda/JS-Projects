@@ -113,7 +113,6 @@ body {
 }
 
 .main-body {
-  margin-top: 70px;
   min-height: calc(100vh - 70px);
   padding-bottom: 100px;
   display: flex;

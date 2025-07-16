@@ -211,6 +211,76 @@
         </form>
       </div>
     </div>
+    <!-- Detailed Booking Modal -->
+    <div class="modal" id="detailed-booking-modal">
+      <div class="modal-content detailed-modal">
+        <span class="close-btn" aria-label="Close modal">×</span>
+        <div class="modal-header">
+          <img id="modal-image" src="" alt="" class="modal-image">
+          <div class="modal-header-info">
+            <h2 id="modal-title">Tour/Destination Name</h2>
+            <p id="modal-description">Description will appear here</p>
+            <div class="modal-details">
+              <span id="modal-duration" class="detail-item"></span>
+              <span id="modal-price" class="detail-item"></span>
+              <div id="modal-rating" class="detail-item rating"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <h3>Book This Experience</h3>
+          <form class="detailed-booking-form">
+            <input type="hidden" id="selected-tour" value="">
+            <div class="form-group">
+              <label for="booking-name">Full Name</label>
+              <input type="text" id="booking-name" placeholder="Enter your full name" required aria-label="Full name">
+            </div>
+            <div class="form-group">
+              <label for="booking-email">Email</label>
+              <input type="email" id="booking-email" placeholder="Enter your email" required aria-label="Email">
+            </div>
+            <div class="form-group">
+              <label for="booking-phone">Phone Number</label>
+              <input type="tel" id="booking-phone" placeholder="Enter your phone number" required aria-label="Phone number">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-date">Travel Date</label>
+                <input type="date" id="booking-date" required aria-label="Travel date">
+              </div>
+              <div class="form-group">
+                <label for="booking-people">Number of People</label>
+                <input type="number" id="booking-people" placeholder="1" min="1" required aria-label="Number of people">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="booking-requirements">Special Requirements (Optional)</label>
+              <textarea id="booking-requirements" placeholder="Any special requirements or preferences..." rows="3" aria-label="Special requirements"></textarea>
+            </div>
+            <div class="booking-summary">
+              <h4>Booking Summary</h4>
+              <div class="summary-item">
+                <span>Tour/Destination:</span>
+                <span id="summary-tour"></span>
+              </div>
+              <div class="summary-item">
+                <span>Date:</span>
+                <span id="summary-date"></span>
+              </div>
+              <div class="summary-item">
+                <span>People:</span>
+                <span id="summary-people"></span>
+              </div>
+              <div class="summary-item total">
+                <span>Total Price:</span>
+                <span id="summary-total"></span>
+              </div>
+            </div>
+            <button type="submit" class="confirm-booking-btn" aria-label="Confirm booking">Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="footer">
     <div class="footer-container">

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".navbar-center-item");
-    const bookBtn = document.querySelector(".navbar-right-item")
+    const bookBtn = document.querySelector(".navbar-right-item");
     hamburger.addEventListener("click", () => {
         navMenu.classList.toggle("active");
         bookBtn.classList.toggle("active");
@@ -50,16 +50,28 @@ document.addEventListener("DOMContentLoaded", () => {
 // Booking page navigation
 document.querySelectorAll('.book-btn').forEach(button => {
     button.addEventListener('click', () => {
-        const tourName = button.closest('.tour-card').querySelector('h3').textContent;
+        const tourCard = button.closest('.tour-card');
+        if (!tourCard) {
+            console.error('No parent .tour-card found');
+            return;
+        }
+        const titleElement = tourCard.querySelector('h3');
+        if (!titleElement) {
+            console.error('No <h3> found in .tour-card');
+            return;
+        }
+        const tourName = titleElement.textContent;
         // Redirect to booking page with tour name (you can pass it via URL or session)
         window.location.href = `/HTML/booking.html?tour=${encodeURIComponent(tourName)}`;
     });
 });
 
 const bookButton = document.querySelector('.book-now-btn');
-bookButton.addEventListener('click', ()=> {
-  window.location.href = 'booking.html'
-});
+if(bookButton){
+  bookButton.addEventListener('click', ()=>{
+    window.location.href = 'booking.html'
+  });
+}
 
 const homeButton = document.querySelector('.home-button');
 if(homeButton){
@@ -101,23 +113,35 @@ if(destinationButton){
 // Destination detail navigation
 document.querySelectorAll('.destination-card').forEach(card => {
     card.addEventListener('click', () => {
-        const name = card.querySelector('h3').textContent;
-        const location = card.querySelector('.location a').textContent;
-        const image = card.querySelector('img').src;
-        const rating = card.querySelector('.rating').textContent;
-        const price = card.querySelector('.price').textContent;
+        const nameEl = card.querySelector('h3');
+        const locationEl = card.querySelector('.location a');
+        const imageEl = card.querySelector('img');
+        const ratingEl = card.querySelector('.rating');
+        const priceEl = card.querySelector('.price');
+        
+        // Check if required elements exist
+        if (!nameEl || !locationEl || !imageEl || !ratingEl || !priceEl) {
+            console.warn('Missing required elements in destination card');
+            return;
+        }
+        
+        const name = nameEl.textContent;
+        const location = locationEl.textContent;
+        const image = imageEl.src;
+        const rating = ratingEl.textContent;
+        const price = priceEl.textContent;
         const description = "Discover the wonders of this amazing place with its unique culture and breathtaking views.";
         const highlights = ["Stunning landscapes", "Rich cultural heritage", "Exciting activities"];
 
-        // Construct URL with query parameters
+        // Construct URL with query parameters (no double encoding)
         const params = new URLSearchParams({
-            name: encodeURIComponent(name),
-            location: encodeURIComponent(location),
-            image: encodeURIComponent(image),
-            rating: encodeURIComponent(rating),
-            price: encodeURIComponent(price),
-            description: encodeURIComponent(description),
-            highlights: encodeURIComponent(JSON.stringify(highlights))
+            name: name,
+            location: location,
+            image: image,
+            rating: rating,
+            price: price,
+            description: description,
+            highlights: JSON.stringify(highlights)
         }).toString();
 
         window.location.href = `/HTML/destination-details.html?${params}`;
@@ -241,23 +265,32 @@ document.querySelectorAll('.destination-card').forEach(card => {
 });
 
 
-document.querySelector('.newsletter-btn').addEventListener('click', function(event) {
-    event.preventDefault();
-    const emailInput = document.querySelector('.newsletter-input');
-    const messageDiv = document.querySelector('#subscriptionMessage');
-    const email = emailInput.value.trim();
-    emailInput.value = "";
+const newsletterBtn = document.querySelector('.newsletter-btn');
+if(newsletterBtn){
+  newsletterBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      const emailInput = document.querySelector('.newsletter-input');
+      const messageDiv = document.querySelector('#subscriptionMessage');
+      
+      if(!emailInput || !messageDiv) {
+          console.warn('Newsletter elements not found');
+          return;
+      }
+      
+      const email = emailInput.value.trim();
+      emailInput.value = "";
 
-    if (email.includes('@') && email.includes('.')) {
-        messageDiv.textContent = `Success! You are subscribed with ${email}.`;
-        messageDiv.className = 'subscription-message success';
-    } else {
-        messageDiv.textContent = 'Failure! Please enter a valid email address.';
-        messageDiv.className = 'subscription-message failure';
-    }
-    messageDiv.style.display = 'block';
+      if (email.includes('@') && email.includes('.')) {
+          messageDiv.textContent = `Success! You are subscribed with ${email}.`;
+          messageDiv.className = 'subscription-message success';
+      } else {
+          messageDiv.textContent = 'Failure! Please enter a valid email address.';
+          messageDiv.className = 'subscription-message failure';
+      }
+      messageDiv.style.display = 'block';
 
-    setTimeout(() => {
-        messageDiv.style.display = 'none';
-    }, 3000);
-});
+      setTimeout(() => {
+          messageDiv.style.display = 'none';
+      }, 3000);
+  });
+}
