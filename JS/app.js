@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function openBookingModal(destination) {
     const modal = document.getElementById("booking-modal");
     
-    // Create modal content with all destination details
     modal.querySelector(".modal-content").innerHTML = `
         <span class="close-btn">&times;</span>
         
