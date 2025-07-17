@@ -115,7 +115,6 @@ body {
 
 .main-body {
   min-height: calc(100vh - 70px);
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,6 +413,46 @@ body {
   font-style: italic;
   color: #a9b7c3;
 }
+
+/* Scroll Animation */
+.tours-section,
+.testimonials-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.tours-container,
+.testimonials-container {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform; 
+}
+
+/* .tour-card {
+    flex: 0 0 280px; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+} */
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-280px * 6)); /* Move by width of original cards */
+    }
+}
+
+.tours-container.animate,
+.testimonials-container.animate {
+    animation: scroll 30s linear infinite;
+}
+
 .modal {
   display: none;
   position: fixed;

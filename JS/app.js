@@ -1,39 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".navbar-center-item");
-    const bookBtn = document.querySelector(".navbar-right-item");
-    hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        bookBtn.classList.toggle("active");
+  const navMenu = document.querySelector(".navbar-center-item");
+  const bookBtn = document.querySelector(".navbar-right-item");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    bookBtn.classList.toggle("active");
+  });
+  document.querySelectorAll(".nav-link a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      bookBtn.classList.remove("active");
     });
-    document.querySelectorAll(".nav-link a").forEach(link => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-            bookBtn.classList.remove("active");
-        });
-    });
-    document.addEventListener("click", (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove("active");
-            bookBtn.classList.remove("active");
-        }
-    });
-    // Login & Sign Up
-    const loginBtn = document.querySelector('.login-btn');
-    // const signupBtn = document.querySelector('.signup-btn');
+  });
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove("active");
+      bookBtn.classList.remove("active");
+    }
+  });
+  // Login & Sign Up
+  const loginBtn = document.querySelector(".login-btn");
+  // const signupBtn = document.querySelector('.signup-btn');
 
-    loginBtn.addEventListener('click', ()=> {
-      window.location.href = 'login.html'
-    });
+  loginBtn.addEventListener("click", () => {
+    window.location.href = "login.html";
+  });
 
-    // signupBtn.addEventListener('click', ()=> {
-    //   window.location.href = "sign-up.html"
-    // })
+  // signupBtn.addEventListener('click', ()=> {
+  //   window.location.href = "sign-up.html"
+  // })
 
   // Modal Toggle
   const modals = document.querySelectorAll(".modal");
   const closeButtons = document.querySelectorAll(".close-btn");
-
 
   closeButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -47,120 +46,125 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-// Booking page navigation
-document.querySelectorAll('.book-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const tourCard = button.closest('.tour-card');
-        if (!tourCard) {
-            console.error('No parent .tour-card found');
-            return;
-        }
-        const titleElement = tourCard.querySelector('h3');
-        if (!titleElement) {
-            console.error('No <h3> found in .tour-card');
-            return;
-        }
-        const tourName = titleElement.textContent;
-        // Redirect to booking page with tour name (you can pass it via URL or session)
-        window.location.href = `/HTML/booking.html?tour=${encodeURIComponent(tourName)}`;
+  // Booking page navigation
+  document.querySelectorAll(".book-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const tourCard = button.closest(".tour-card");
+      if (!tourCard) {
+        console.error("No parent .tour-card found");
+        return;
+      }
+      const titleElement = tourCard.querySelector("h3");
+      if (!titleElement) {
+        console.error("No <h3> found in .tour-card");
+        return;
+      }
+      const tourName = titleElement.textContent;
+      // Redirect to booking page with tour name (you can pass it via URL or session)
+      window.location.href = `/HTML/booking.html?tour=${encodeURIComponent(
+        tourName
+      )}`;
     });
-});
-
-const bookButton = document.querySelector('.book-now-btn');
-if(bookButton){
-  bookButton.addEventListener('click', ()=>{
-    window.location.href = 'booking.html'
   });
-}
 
-const homeButton = document.querySelector('.home-button');
-if(homeButton){
-  homeButton.addEventListener('click', ()=> {
-    window.location.href = 'index.html';
-  })
-}
-
-const companyName = document.querySelector('.company-name');
-if(companyName){
-  companyName.addEventListener('click', ()=> {
-    window.location.href = 'index.html'
-  })
-}
-
-const toursButton = document.querySelector('.tours-button');
-if(toursButton){
-  toursButton.addEventListener('click', ()=> {
-    window.location.href = 'tours.html';
-  })
-};
-
-const exploreButton = document.querySelector('.explore-now-btn');
-if(exploreButton){
-  exploreButton.addEventListener('click', ()=> {
-    window.location.href = 'featured.html';
-  })
-}
-
-const destinationButton = document.querySelector('.destination-button');
-if(destinationButton){
-  destinationButton.addEventListener('click', ()=> {
-    window.location.href = 'featured.html'
-  })
-};
-
-const aboutButton = document.querySelector('.about-button');
-if(aboutButton){
-  aboutButton.addEventListener('click', ()=> {
-    window.location.href = "about.html"
-  })
-}
-
-const contactButton = document.querySelector('contact-button');
-if(contactButton){
-  contactButton.addEventListener('click', ()=> {
-    window.location.href = "contact.html"
-  })
-}
-
-// Existing code (if any) remains...
-
-// Destination detail navigation
-document.querySelectorAll('.destination-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const nameEl = card.querySelector('h3');
-        const locationEl = card.querySelector('.location a');
-        const imageEl = card.querySelector('img');
-        const ratingEl = card.querySelector('.rating');
-        const priceEl = card.querySelector('.price');
-        
-        // Check if required elements exist
-        if (!nameEl || !locationEl || !imageEl || !ratingEl || !priceEl) {
-            console.warn('Missing required elements in destination card');
-            return;
-        }
-        
-        const name = nameEl.textContent;
-        const location = locationEl.textContent;
-        const image = imageEl.src;
-        const rating = ratingEl.textContent;
-        const price = priceEl.textContent;
-        const description = "Discover the wonders of this amazing place with its unique culture and breathtaking views.";
-        const highlights = ["Stunning landscapes", "Rich cultural heritage", "Exciting activities"];
-
-        // Construct URL with query parameters (no double encoding)
-        const params = new URLSearchParams({
-            name: name,
-            location: location,
-            image: image,
-            rating: rating,
-            price: price,
-            description: description,
-            highlights: JSON.stringify(highlights)
-        }).toString();
-
-        window.location.href = `/HTML/destination-details.html?${params}`;
-        });
+  const bookButton = document.querySelector(".book-now-btn");
+  if (bookButton) {
+    bookButton.addEventListener("click", () => {
+      window.location.href = "booking.html";
     });
+  }
+
+  const homeButton = document.querySelector(".home-button");
+  if (homeButton) {
+    homeButton.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  }
+
+  const companyName = document.querySelector(".company-name");
+  if (companyName) {
+    companyName.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  }
+
+  const toursButton = document.querySelector(".tours-button");
+  if (toursButton) {
+    toursButton.addEventListener("click", () => {
+      window.location.href = "tours.html";
+    });
+  }
+
+  const exploreButton = document.querySelector(".explore-now-btn");
+  if (exploreButton) {
+    exploreButton.addEventListener("click", () => {
+      window.location.href = "featured.html";
+    });
+  }
+
+  const destinationButton = document.querySelector(".destination-button");
+  if (destinationButton) {
+    destinationButton.addEventListener("click", () => {
+      window.location.href = "featured.html";
+    });
+  }
+
+  const aboutButton = document.querySelector(".about-button");
+  if (aboutButton) {
+    aboutButton.addEventListener("click", () => {
+      window.location.href = "about.html";
+    });
+  }
+
+  const contactButton = document.querySelector("contact-button");
+  if (contactButton) {
+    contactButton.addEventListener("click", () => {
+      window.location.href = "contact.html";
+    });
+  }
+
+  // Destination detail navigation
+  document.querySelectorAll(".destination-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const nameEl = card.querySelector("h3");
+      const locationEl = card.querySelector(".location a");
+      const imageEl = card.querySelector("img");
+      const ratingEl = card.querySelector(".rating");
+      const priceEl = card.querySelector(".price");
+
+      // Check if required elements exist
+      if (!nameEl || !locationEl || !imageEl || !ratingEl || !priceEl) {
+        console.warn("Missing required elements in destination card");
+        return;
+      }
+
+      const name = nameEl.textContent;
+      const location = locationEl.textContent;
+      const image = imageEl.src;
+      const rating = ratingEl.textContent;
+      const price = priceEl.textContent;
+      const description =
+        "Discover the wonders of this amazing place with its unique culture and breathtaking views.";
+      const highlights = [
+        "Stunning landscapes",
+        "Rich cultural heritage",
+        "Exciting activities",
+      ];
+
+      // Construct URL with query parameters (no double encoding)
+      const params = new URLSearchParams({
+        name: name,
+        location: location,
+        image: image,
+        rating: rating,
+        price: price,
+        description: description,
+        highlights: JSON.stringify(highlights),
+      }).toString();
+
+      window.location.href = `/HTML/destination-details.html?${params}`;
+    });
+  });
 
   // Chat Support System
   const supportIcon = document.getElementById("supportIcon");
@@ -276,35 +280,90 @@ document.querySelectorAll('.destination-card').forEach(card => {
   userInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") sendMessageHandler();
   });
+  // Animation
+  const toursContainer = document.querySelector(".tours-container");
+    if (!toursContainer) return;
+
+    const originalCards = Array.from(document.querySelectorAll(".tour-card"));
+    originalCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        toursContainer.appendChild(clone);
+    });
+
+    if (originalCards.length > 3) {
+        toursContainer.classList.add("animate");
+    }
+
+    const style = document.createElement('style');
+    const duration = originalCards.length * 3;
+    style.textContent = `
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-280px * ${originalCards.length})); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // testnimonials Animation
+    const testimonialsContainer = document.querySelector(".testimonials-container");
+    if (!testimonialsContainer) return;
+    
+    const testimonials = document.querySelectorAll(".testimonial-card");
+    if (testimonials.length < 2) return; // Don't animate if only one testimonial
+    
+    testimonials.forEach(testimonial => {
+        const clone = testimonial.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        testimonialsContainer.appendChild(clone);
+    });
+    
+    const cardStyle = window.getComputedStyle(testimonials[0]);
+    const cardWidth = testimonials[0].offsetWidth + 
+                     parseInt(cardStyle.marginRight) + 
+                     parseInt(cardStyle.marginLeft);
+    const scrollDistance = cardWidth * testimonials.length;
+    const durations = testimonials.length * 4; // 4 seconds per testimonial
+    
+    const styles = document.createElement('style');
+    style.textContent = `
+        .testimonials-container.animate {
+            animation: testimonial-scroll ${durations}s linear infinite;
+        }
+        @keyframes testimonial-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-${scrollDistance}px); }
+        }
+    `;
+    document.head.appendChild(styles); 
+    testimonialsContainer.classList.add("animate");
 });
+const newsletterBtn = document.querySelector(".newsletter-btn");
+if (newsletterBtn) {
+  newsletterBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    const emailInput = document.querySelector(".newsletter-input");
+    const messageDiv = document.querySelector("#subscriptionMessage");
 
+    if (!emailInput || !messageDiv) {
+      console.warn("Newsletter elements not found");
+      return;
+    }
 
-const newsletterBtn = document.querySelector('.newsletter-btn');
-if(newsletterBtn){
-  newsletterBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-      const emailInput = document.querySelector('.newsletter-input');
-      const messageDiv = document.querySelector('#subscriptionMessage');
-      
-      if(!emailInput || !messageDiv) {
-          console.warn('Newsletter elements not found');
-          return;
-      }
-      
-      const email = emailInput.value.trim();
-      emailInput.value = "";
+    const email = emailInput.value.trim();
+    emailInput.value = "";
 
-      if (email.includes('@') && email.includes('.')) {
-          messageDiv.textContent = `Success! You are subscribed with ${email}.`;
-          messageDiv.className = 'subscription-message success';
-      } else {
-          messageDiv.textContent = 'Failure! Please enter a valid email address.';
-          messageDiv.className = 'subscription-message failure';
-      }
-      messageDiv.style.display = 'block';
+    if (email.includes("@") && email.includes(".")) {
+      messageDiv.textContent = `Success! You are subscribed with ${email}.`;
+      messageDiv.className = "subscription-message success";
+    } else {
+      messageDiv.textContent = "Failure! Please enter a valid email address.";
+      messageDiv.className = "subscription-message failure";
+    }
+    messageDiv.style.display = "block";
 
-      setTimeout(() => {
-          messageDiv.style.display = 'none';
-      }, 3000);
+    setTimeout(() => {
+      messageDiv.style.display = "none";
+    }, 3000);
   });
 }
