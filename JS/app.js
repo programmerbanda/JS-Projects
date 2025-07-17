@@ -125,47 +125,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Destination detail navigation
   document.querySelectorAll(".destination-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const nameEl = card.querySelector("h3");
-      const locationEl = card.querySelector(".location a");
-      const imageEl = card.querySelector("img");
-      const ratingEl = card.querySelector(".rating");
-      const priceEl = card.querySelector(".price");
+    card.addEventListener("click", (e) => {
+        // Don't trigger if clicking on links/buttons
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
 
-      // Check if required elements exist
-      if (!nameEl || !locationEl || !imageEl || !ratingEl || !priceEl) {
-        console.warn("Missing required elements in destination card");
-        return;
-      }
+        // Get all card details
+        const destination = {
+            image: card.querySelector("img").src,
+            name: card.querySelector("h3").textContent.trim(),
+            location: card.querySelector(".location a").textContent.trim(),
+            rating: card.querySelector(".rating").textContent.trim(),
+            price: card.querySelector(".price").textContent.trim()
+        };
 
-      const name = nameEl.textContent;
-      const location = locationEl.textContent;
-      const image = imageEl.src;
-      const rating = ratingEl.textContent;
-      const price = priceEl.textContent;
-      const description =
-        "Discover the wonders of this amazing place with its unique culture and breathtaking views.";
-      const highlights = [
-        "Stunning landscapes",
-        "Rich cultural heritage",
-        "Exciting activities",
-      ];
-
-      // Construct URL with query parameters (no double encoding)
-      const params = new URLSearchParams({
-        name: name,
-        location: location,
-        image: image,
-        rating: rating,
-        price: price,
-        description: description,
-        highlights: JSON.stringify(highlights),
-      }).toString();
-
-      window.location.href = `/HTML/destination-details.html?${params}`;
+        openBookingModal(destination);
     });
-  });
+});
 
+function openBookingModal(destination) {
+    const modal = document.getElementById("booking-modal");
+    
+    // Create modal content with all destination details
+    modal.querySelector(".modal-content").innerHTML = `
+        <span class="close-btn">&times;</span>
+        
+        <div class="destination-header">
+            <img src="${destination.image}" alt="${destination.name}" class="destination-image">
+            <div class="destination-meta">
+                <h2>${destination.name}</h2>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> ${destination.location}</p>
+                <div class="meta-row">
+                    <span class="rating">${destination.rating}</span>
+                    <span class="price">${destination.price}</span>
+                </div>
+            </div>
+        </div>
+        
+        <form class="booking-form">
+            <h3>Book Your Trip</h3>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Your email" required>
+            </div>
+            <div class="form-group">
+                <label>Travel Date</label>
+                <input type="date" required>
+            </div>
+            <div class="form-group">
+                <label>Travelers</label>
+                <input type="number" placeholder="Number of people" min="1" required>
+            </div>
+            <button type="submit" class="submit-btn">Confirm Booking</button>
+        </form>
+    `;
+    modal.style.display = "block";
+    
+    modal.querySelector(".close-btn").onclick = () => modal.style.display = "none";
+    window.onclick = (e) => e.target == modal ? modal.style.display = "none" : null;
+}
   // Chat Support System
   const supportIcon = document.getElementById("supportIcon");
   const aiChatContainer = document.getElementById("aiChatContainer");
