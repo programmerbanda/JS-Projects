@@ -22,14 +22,16 @@
       <div class="navbar-center-item">
         <ul>
           <li class="nav-link home-button"><a href="/HTML/index.html">Home</a></li>
-          <li class="nav-link"><a href="/index.html#destinations">Destinations</a></li>
+          <li class="nav-link destination-button"><a href="/HTML/featured.html">Destinations</a></li>
           <li class="nav-link tours-button"><a href="/HTML/tours.html">Tours</a></li>
+          <li class="nav-link about-button"><a href="/HTML/about.html">About Us</a></li>
+          <li class="nav-link contact-button"><a href="/HTML/contact.html">Contact Us</a></li>
         </ul>
       </div>
       <div class="navbar-right-item">
         <button class="book-now-btn pulse" data-modal="booking" aria-label="Book a tour">Book Now</button>
-        <button class="login-btn" data-modal="auth" aria-label="Log in">Login</button>
-        <button class="signup-btn" data-modal="auth" aria-label="Sign up">Sign Up</button>
+        <button class="login-btn" data-modal="auth" aria-label="Log in">Login or SignUp</button>
+        <!-- <button class="signup-btn" data-modal="auth" aria-label="Sign up">Sign Up</button> -->
       </div>
     </div>
   </nav>
@@ -241,7 +243,8 @@
             </div>
             <div class="form-group">
               <label for="booking-phone">Phone Number</label>
-              <input type="tel" id="booking-phone" placeholder="Enter your phone number" required aria-label="Phone number">
+              <input type="tel" id="booking-phone" placeholder="Enter your phone number" required
+                aria-label="Phone number">
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -255,7 +258,8 @@
             </div>
             <div class="form-group">
               <label for="booking-requirements">Special Requirements (Optional)</label>
-              <textarea id="booking-requirements" placeholder="Any special requirements or preferences..." rows="3" aria-label="Special requirements"></textarea>
+              <textarea id="booking-requirements" placeholder="Any special requirements or preferences..." rows="3"
+                aria-label="Special requirements"></textarea>
             </div>
             <div class="booking-summary">
               <h4>Booking Summary</h4>
@@ -305,11 +309,11 @@
       <div class="footer-section footer-links">
         <h4 class="footer-heading">Quick Links</h4>
         <ul class="footer-all-links">
-          <li><a href="/index.html" class="footer-link">Home</a></li>
-          <li><a href="/index.html#destinations" class="footer-link">Destinations</a></li>
-          <li><a href="/tours.html" class="footer-link">Tours</a></li>
+          <li><a target="_blank" href="/HTML/index.html" class="footer-link">Home</a></li>
+          <li><a target="_blank" href="/HTML/featured.html" class="footer-link">Destinations</a></li>
+          <li><a target="_blank" href="/HTML/tours.html" class="footer-link">Tours</a></li>
           <li><a target="_blank" href="/HTML/about.html" class="footer-link">About Us</a></li>
-          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a target="_blank" href="/HTML/contact.html" class="footer-link">Contact</a></li>
           <li><a target="_blank" href="/HTML/travel-blog.html" class="footer-link">Travel Blog</a></li>
         </ul>
       </div>

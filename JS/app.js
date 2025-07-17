@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // Login & Sign Up
     const loginBtn = document.querySelector('.login-btn');
-    const signupBtn = document.querySelector('.signup-btn');
+    // const signupBtn = document.querySelector('.signup-btn');
 
     loginBtn.addEventListener('click', ()=> {
       window.location.href = 'login.html'
     });
 
-    signupBtn.addEventListener('click', ()=> {
-      window.location.href = "sign-up.html"
-    })
+    // signupBtn.addEventListener('click', ()=> {
+    //   window.location.href = "sign-up.html"
+    // })
 
   // Modal Toggle
   const modals = document.querySelectorAll(".modal");
@@ -105,6 +105,20 @@ const destinationButton = document.querySelector('.destination-button');
 if(destinationButton){
   destinationButton.addEventListener('click', ()=> {
     window.location.href = 'featured.html'
+  })
+};
+
+const aboutButton = document.querySelector('.about-button');
+if(aboutButton){
+  aboutButton.addEventListener('click', ()=> {
+    window.location.href = "about.html"
+  })
+}
+
+const contactButton = document.querySelector('contact-button');
+if(contactButton){
+  contactButton.addEventListener('click', ()=> {
+    window.location.href = "contact.html"
   })
 }
 

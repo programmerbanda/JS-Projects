@@ -991,9 +991,14 @@ body {
 
 /* Contact Page */
 
+@media (max-width: 1080px) {
+    .login-btn {
+      display: none;
+    }
+}
+
 @media (max-width: 900px) {
-  .login-btn,
-  .signup-btn {
+  .login-btn {
     display: none;
   }
 }
