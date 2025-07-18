@@ -113,3 +113,69 @@ body {
 .submit-btn:hover {
     background: #00a3af;
 }
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-width: 90%;
+  width: 400px;
+}
+
+.popup-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#loginBtn {
+  background-color: #00c4cc;
+  color: white;
+}
+
+#closeBtn {
+  background-color: #6c757d;
+  color: white;
+}

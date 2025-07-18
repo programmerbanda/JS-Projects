@@ -25,7 +25,7 @@
                     <li class="nav-link destination-button"><a href="/HTML/featured.html">Destinations</a></li>
                     <li class="nav-link tours-button"><a href="/HTML/tours.html">Tours</a></li>
                     <li class="nav-link about-button"><a href="/HTML/about.html">About Us</a></li>
-                <li class="nav-link contact-button"><a href="/HTML/contact.html">Contact Us</a></li>
+                    <li class="nav-link contact-button"><a href="/HTML/contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="navbar-right-item">
@@ -97,6 +97,18 @@
                 </form>
             </div>
         </div>
+        <!-- Popup Modal -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-box">
+                <h2>Welcome to ExploreMore!</h2>
+                <p>Discover something amazing today!</p>
+                <div class="popup-buttons">
+                    <button id="loginBtn">Login</button>
+                    <button id="closeBtn">Close</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
@@ -213,6 +225,34 @@
     </div>
     <script src="/JS/app.js"></script>
     <script src="/JS/form-validation.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const popup = document.getElementById("popup");
+            const closeBtn = document.getElementById("closeBtn");
+            const loginBtn = document.getElementById("loginBtn");
+
+            // Show popup after 1 second
+            setTimeout(() => {
+                popup.classList.add("show");
+            }, 500);
+
+            setTimeout(()=> {
+                popup.classList.remove("show")
+            }, 5000)
+
+            // Close the popup
+            closeBtn.addEventListener("click", () => {
+                popup.classList.remove("show");
+            });
+
+            // Handle Login Button (example action)
+            loginBtn.addEventListener("click", () => {
+                // Redirect to login page or open modal
+                window.location.href = "login.html"; // Change this to your actual login URL
+            });
+        });
+    </script>
+
 </body>
-</html>
+
 </html>
