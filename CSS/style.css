@@ -137,7 +137,7 @@ body {
 .main-context {
   margin: 100px 0;
   width: 51%;
-  padding: 50px 50px;
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,12 +155,12 @@ body {
   margin-bottom: 24px;
   transition: var(--transition);
   color: #00FFFF;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 
 }
 
 .main-content-text {
-  color: #000000;
+  color: #ffffff;
 }
 
 .explore-now-btn {
@@ -1148,11 +1148,11 @@ body {
     width: 70%;
   }
   .main-content {
-    font-size: 40px;
+    font-size: 36px;
   }
   .explore-now-btn {
-    font-size: 12px;
-    padding: 12px 20px;
+    font-size: 14px;
+    padding: 14px 20px;
   }
   .support-icon {
     height: 44px;
@@ -1166,13 +1166,14 @@ body {
   }
   .main-context {
     width: 80%;
+    padding: 24px 15px;
   }
   .main-content {
-    font-size: 40px;
+    font-size: 26px;
   }
   .explore-now-btn {
-    font-size: 12px;
-    padding: 6px 10px;
+    font-size: 14px;
+    padding: 8px 16px;
   }
   .ai-chat-container {
     height: 400px;
