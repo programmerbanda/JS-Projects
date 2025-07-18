@@ -4,7 +4,7 @@
 }
 
 .tours-section {
-    padding: 60px 20px;
+    padding: 10px 20px;
     max-width: 100%;
     text-align: center;
     color: #000000;
@@ -29,7 +29,7 @@
 
 .tours-subheading {
     font-size: 16px;
-    color: #fffefe;
+    color: #000000;
     margin-bottom: 40px;
 }
 

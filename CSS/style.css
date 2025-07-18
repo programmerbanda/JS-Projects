@@ -154,6 +154,9 @@ body {
   color: #0013ea;
   margin-bottom: 24px;
   transition: var(--transition);
+  color: #00FFFF;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+
 }
 
 .main-content-text {
@@ -1081,6 +1084,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .invisible {
+    display: none;
+  }
   .hamburger {
     display: block;
   }
@@ -1104,10 +1110,9 @@ body {
   }
 
   .navbar-right-item {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
-    right: 60px; /* Adjust as needed for alignment */
-    /* background: linear-gradient(135deg, #00c4cc, #0077ff); */
+    right: 60px;
     backdrop-filter: blur(100px);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 10px;
@@ -1116,10 +1121,10 @@ body {
   }
 
   .navbar-right-item.active {
-    display: flex; /* Show when active */
-    flex-direction: column; /* Stack buttons vertically */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
   }
 
   .navbar-center-item ul {

@@ -15,14 +15,14 @@
 .main-body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 10px;
 }
 
 /* Offers Section */
 .offers-section {
     padding: 80px 20px;
     max-width: 1200px;
-    margin: 40px 20px;
+    margin: 30px 20px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     text-align: center;
