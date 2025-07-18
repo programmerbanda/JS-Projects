@@ -2,10 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".navbar-center-item");
   const bookBtn = document.querySelector(".navbar-right-item");
+  const icon = hamburger.querySelector("i");
+
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
     bookBtn.classList.toggle("active");
+
+    if (icon.classList.contains("fa-bars")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+    } else {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
   });
+
   document.querySelectorAll(".nav-link a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
@@ -126,25 +137,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // Destination detail navigation
   document.querySelectorAll(".destination-card").forEach((card) => {
     card.addEventListener("click", (e) => {
-        // Don't trigger if clicking on links/buttons
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+      // Don't trigger if clicking on links/buttons
+      if (e.target.tagName === "A" || e.target.tagName === "BUTTON") return;
 
-        // Get all card details
-        const destination = {
-            image: card.querySelector("img").src,
-            name: card.querySelector("h3").textContent.trim(),
-            location: card.querySelector(".location a").textContent.trim(),
-            rating: card.querySelector(".rating").textContent.trim(),
-            price: card.querySelector(".price").textContent.trim()
-        };
+      // Get all card details
+      const destination = {
+        image: card.querySelector("img").src,
+        name: card.querySelector("h3").textContent.trim(),
+        location: card.querySelector(".location a").textContent.trim(),
+        rating: card.querySelector(".rating").textContent.trim(),
+        price: card.querySelector(".price").textContent.trim(),
+      };
 
-        openBookingModal(destination);
+      openBookingModal(destination);
     });
-});
+  });
 
-function openBookingModal(destination) {
+  function openBookingModal(destination) {
     const modal = document.getElementById("booking-modal");
-    
+
     modal.querySelector(".modal-content").innerHTML = `
         <span class="close-btn">&times;</span>
         
@@ -181,10 +192,12 @@ function openBookingModal(destination) {
         </form>
     `;
     modal.style.display = "block";
-    
-    modal.querySelector(".close-btn").onclick = () => modal.style.display = "none";
-    window.onclick = (e) => e.target == modal ? modal.style.display = "none" : null;
-}
+
+    modal.querySelector(".close-btn").onclick = () =>
+      (modal.style.display = "none");
+    window.onclick = (e) =>
+      e.target == modal ? (modal.style.display = "none") : null;
+  }
   // Chat Support System
   const supportIcon = document.getElementById("supportIcon");
   const aiChatContainer = document.getElementById("aiChatContainer");
@@ -301,51 +314,54 @@ function openBookingModal(destination) {
   });
   // Animation
   const toursContainer = document.querySelector(".tours-container");
-    if (!toursContainer) return;
+  if (!toursContainer) return;
 
-    const originalCards = Array.from(document.querySelectorAll(".tour-card"));
-    originalCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        toursContainer.appendChild(clone);
-    });
+  const originalCards = Array.from(document.querySelectorAll(".tour-card"));
+  originalCards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    toursContainer.appendChild(clone);
+  });
 
-    if (originalCards.length > 3) {
-        toursContainer.classList.add("animate");
-    }
+  if (originalCards.length > 3) {
+    toursContainer.classList.add("animate");
+  }
 
-    const style = document.createElement('style');
-    const duration = originalCards.length * 3;
-    style.textContent = `
+  const style = document.createElement("style");
+  const duration = originalCards.length * 3;
+  style.textContent = `
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(-280px * ${originalCards.length})); }
         }
     `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 
-    // testnimonials Animation
-    const testimonialsContainer = document.querySelector(".testimonials-container");
-    if (!testimonialsContainer) return;
-    
-    const testimonials = document.querySelectorAll(".testimonial-card");
-    if (testimonials.length < 2) return; // Don't animate if only one testimonial
-    
-    testimonials.forEach(testimonial => {
-        const clone = testimonial.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        testimonialsContainer.appendChild(clone);
-    });
-    
-    const cardStyle = window.getComputedStyle(testimonials[0]);
-    const cardWidth = testimonials[0].offsetWidth + 
-                     parseInt(cardStyle.marginRight) + 
-                     parseInt(cardStyle.marginLeft);
-    const scrollDistance = cardWidth * testimonials.length;
-    const durations = testimonials.length * 4; // 4 seconds per testimonial
-    
-    const styles = document.createElement('style');
-    style.textContent = `
+  // testnimonials Animation
+  const testimonialsContainer = document.querySelector(
+    ".testimonials-container"
+  );
+  if (!testimonialsContainer) return;
+
+  const testimonials = document.querySelectorAll(".testimonial-card");
+  if (testimonials.length < 2) return; // Don't animate if only one testimonial
+
+  testimonials.forEach((testimonial) => {
+    const clone = testimonial.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    testimonialsContainer.appendChild(clone);
+  });
+
+  const cardStyle = window.getComputedStyle(testimonials[0]);
+  const cardWidth =
+    testimonials[0].offsetWidth +
+    parseInt(cardStyle.marginRight) +
+    parseInt(cardStyle.marginLeft);
+  const scrollDistance = cardWidth * testimonials.length;
+  const durations = testimonials.length * 4; // 4 seconds per testimonial
+
+  const styles = document.createElement("style");
+  style.textContent = `
         .testimonials-container.animate {
             animation: testimonial-scroll ${durations}s linear infinite;
         }
@@ -354,8 +370,8 @@ function openBookingModal(destination) {
             100% { transform: translateX(-${scrollDistance}px); }
         }
     `;
-    document.head.appendChild(styles); 
-    testimonialsContainer.classList.add("animate");
+  document.head.appendChild(styles);
+  testimonialsContainer.classList.add("animate");
 });
 const newsletterBtn = document.querySelector(".newsletter-btn");
 if (newsletterBtn) {
