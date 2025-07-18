@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (icon.classList.contains("fa-bars")) {
       icon.classList.remove("fa-bars");
       icon.classList.add("fa-times");
+      document.body.style.overflow = 'hidden';
     } else {
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
+      document.body.style.overflow = 'auto';
     }
   });
 
@@ -132,9 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
     contactButton.addEventListener("click", () => {
       window.location.href = "contact.html";
     });
-  }
+  };
 
-  // Destination detail navigation
   document.querySelectorAll(".destination-card").forEach((card) => {
     card.addEventListener("click", (e) => {
       // Don't trigger if clicking on links/buttons
@@ -157,8 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("booking-modal");
 
     modal.querySelector(".modal-content").innerHTML = `
-        <span class="close-btn">&times;</span>
-        
+        <span class="close-btn">×</span>
         <div class="destination-header">
             <img src="${destination.image}" alt="${destination.name}" class="destination-image">
             <div class="destination-meta">
@@ -191,13 +191,26 @@ document.addEventListener("DOMContentLoaded", () => {
             <button type="submit" class="submit-btn">Confirm Booking</button>
         </form>
     `;
-    modal.style.display = "block";
 
-    modal.querySelector(".close-btn").onclick = () =>
-      (modal.style.display = "none");
-    window.onclick = (e) =>
-      e.target == modal ? (modal.style.display = "none") : null;
+    // Show modal and disable scrolling
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
+
+    // Close modal and re-enable scrolling
+    modal.querySelector(".close-btn").onclick = () => {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    };
+
+    // Close modal on outside click and re-enable scrolling
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    };
   }
+
   // Chat Support System
   const supportIcon = document.getElementById("supportIcon");
   const aiChatContainer = document.getElementById("aiChatContainer");
@@ -262,12 +275,16 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "I'm an AI of ExploreMore Company",
       default:
         "I'm happy to help with your travel questions. What would you like to know?",
+      login : 'login.html'
     };
 
     question = question.toLowerCase();
 
     if (question.includes("hello") || question.includes("hi")) {
       return simpleResponses["hello"];
+    } else if (question.includes('login')){
+      window.location.href = simpleResponses['login']
+      return 'Redirecting you to the login page';
     } else if (question.includes("name")) {
       return simpleResponses["name"];
     } else if (question.includes("best") || question.includes("recommend")) {

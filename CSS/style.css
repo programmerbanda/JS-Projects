@@ -1075,9 +1075,6 @@ body {
 
 
 @media (max-width: 900px) {
-  .login-btn {
-    display: none;
-  }
   .about-button {
     display: none;
   }
@@ -1094,16 +1091,35 @@ body {
     top: 70px;
     left: 0;
     width: 100%;
-    background: #2a7b9b;
     background: linear-gradient(135deg, #00c4cc, #0077ff);
     backdrop-filter: blur(100px);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
   .about-button, .contact-button {
     display: block;
+    display: flex;
   }
   .navbar-center-item.active {
     display: block;
+  }
+
+  .navbar-right-item {
+    display: none; /* Initially hidden */
+    position: absolute;
+    right: 60px; /* Adjust as needed for alignment */
+    /* background: linear-gradient(135deg, #00c4cc, #0077ff); */
+    backdrop-filter: blur(100px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 1000;
+  }
+
+  .navbar-right-item.active {
+    display: flex; /* Show when active */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    gap: 10px; /* Space between buttons */
   }
 
   .navbar-center-item ul {
