@@ -30,10 +30,12 @@ body {
 .blog-header h1 {
     color: var(--primary-color);
     margin-bottom: 10px;
+    transition: all 0.4s ease;
 }
 
 .blog-subheading {
-    color: #fff;
+    margin: 0 30px;
+    color: #000000;
     font-size: 16px;
 }
 
@@ -45,12 +47,11 @@ body {
 }
 
 .blog-post {
-    background: rgba(26, 37, 47, 0.8);
     border-radius: 12px;
     overflow: hidden;
     width: 350px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .blog-post:hover {
@@ -65,7 +66,7 @@ body {
 
 .blog-content {
     padding: 15px;
-    color: #fff;
+    color: #000000;
 }
 
 .blog-content h2 {
@@ -92,4 +93,10 @@ body {
 
 .read-more:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .blog-header h1 {
+        font-size: 24px;
+    }
 }

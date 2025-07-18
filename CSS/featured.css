@@ -22,7 +22,7 @@
 .offers-section {
     padding: 80px 20px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px 20px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     text-align: center;
@@ -36,7 +36,7 @@
 .destinations-section {
     padding: 80px 20px;
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 60px 20px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     text-align: center;
@@ -44,6 +44,7 @@
     box-shadow: var(--shadow-dark);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+
 }
 
 @supports (backdrop-filter: blur(10px)) {
@@ -57,7 +58,7 @@
 /* Promo Banner */
 .promo-banner {
     background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
+    color: #fff;
     padding: 16px 24px;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -241,7 +242,7 @@
     width: 100%;
     padding: 10px 0;
     background-color: var(--primary-blue);
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 6px;
     font-weight: 600;
@@ -297,7 +298,7 @@
     .offers-section,
     .destinations-section {
         padding: 40px 16px;
-        margin: 40px auto;
+        margin: 40px 16px;
     }
 
     .section-heading .title {

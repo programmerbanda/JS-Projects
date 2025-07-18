@@ -20,7 +20,8 @@ body {
 .privacy-container {
     padding: 70px 0 40px;
     min-height: calc(100vh - 70px);
-    margin: 0px 80px;
+    margin: 20px 100px;
+    transition: all 0.4s ease;
 }
 
 .privacy-container h1 {
@@ -38,11 +39,10 @@ body {
 
 .policy-section {
     margin-bottom: 30px;
-    background: #1a252f;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    color: #000000;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .policy-section h2 {
@@ -58,7 +58,7 @@ body {
 
 .policy-section li {
     margin-bottom: 8px;
-    color: #fff;
+    color: #000000;
 }
 
 .policy-section a {
@@ -81,4 +81,16 @@ address i {
     color: var(--primary-color);
     width: 20px;
     text-align: center;
+}
+
+@media (max-width: 768px){
+    .privacy-container {
+        margin: 30px;
+    }
+    .privacy-container h1 {
+        font-size: 24px;
+    }
+    .policy-section h2 {
+        font-size: 20px;
+    }
 }

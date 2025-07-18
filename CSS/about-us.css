@@ -39,13 +39,12 @@
 }
 
 .about-section {
-    background: #1a252f;
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    transition: transform 0.3s ease;
+    color: #000000;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    transition: all 0.3s ease;
 }
 
 .about-section:hover {
@@ -97,4 +96,13 @@
 .about-section a:hover {
     color: var(--secondary-color);
     text-decoration: underline;
+}
+
+@media ( max-width: 768px){
+    .about-header h1 {
+        font-size: 24px;
+    }
+    .about-section h2 {
+        font-size: 20px;
+    }
 }

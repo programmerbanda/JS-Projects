@@ -159,7 +159,6 @@ function openBookingModal(destination) {
                 </div>
             </div>
         </div>
-        
         <form class="booking-form">
             <h3>Book Your Trip</h3>
             <div class="form-group">

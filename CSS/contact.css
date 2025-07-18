@@ -14,10 +14,11 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .contact-section {
-    padding: 80px 20px;
+    padding: 20px;
     background-color: #f9f9f9;
     max-width: 1200px;
     margin: 20px auto;
@@ -30,18 +31,20 @@ body {
     margin-bottom: 20px;
 }
 
-.section-heading .tagline {
+.tagline-contact {
     color: #00c4cc;
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 0.4s ease;
 }
 
-.section-heading .title {
+.title-contact{
     font-size: 2.5rem;
     color: #333;
     margin: 10px 0;
+    transition: all 0.4s ease;
 }
 
 .contact-subheading {
@@ -64,7 +67,7 @@ body {
     flex: 1;
     min-width: 260px;
     background: #ffffff;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -74,32 +77,32 @@ body {
 }
 
 .contact-info p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 1rem;
     color: #555;
-    line-height: 1.6;
+    line-height: 1.2;
     display: flex;
     width: 100%;
-    padding: 20px;
+    padding: 8px;
     border-radius: 8px;
     align-items: flex-start;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .contact-info strong {
     color: #333;
-    margin-right: 10px;
-    min-width: 100px;
+    margin-right: 4px;
+    min-width: 90px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .contact-form {
     flex: 1;
     min-width: 260px;
     background: white;
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -144,4 +147,14 @@ body {
 .contact-form button:hover {
     background-color: #00a3af;
     transform: translateY(-2px);
+}
+
+@media ( max-width : 768px){
+     .tagline-contact {
+        font-size: 18px;
+    }
+    .title-contact {
+        font-size: 24px;
+        margin: 0;
+    }
 }

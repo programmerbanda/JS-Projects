@@ -19,6 +19,7 @@ body {
 .insurance-container {
     padding: 70px 0 40px;
     min-height: calc(100vh - 70px);
+    margin: 20px;
 }
 
 .insurance-header {
@@ -29,6 +30,7 @@ body {
 .insurance-header h1 {
     color: var(--primary-color);
     margin-bottom: 10px;
+    transition: all 0.4s ease;
 }
 
 .insurance-subheading {
@@ -42,12 +44,11 @@ body {
 }
 
 .insurance-section {
-    background: #1a252f;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #fff;
+    color: #000000;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .insurance-section h2 {
@@ -55,6 +56,7 @@ body {
     margin-top: 0;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
 }
 
 .insurance-section p {
@@ -89,4 +91,13 @@ body {
 
 .insurance-section a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .insurance-header h1 {
+        font-size: 24px;
+    }
+    .insurance-section h2 {
+        font-size: 20px;
+    }
 }

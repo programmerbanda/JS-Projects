@@ -109,11 +109,12 @@ body {
 .hamburger {
   display: none;
   font-size: 24px;
-  color: #fce302;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .main-body {
+  margin-top: 70px;
   min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
