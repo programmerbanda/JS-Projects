@@ -106,3 +106,18 @@
         font-size: 20px;
     }
 }
+
+body.dark-mode .about-subheading {
+    color: #ffffff;
+} 
+
+body.dark-mode .about-section {
+    border: 1px solid #ffffff;
+}
+
+body.dark-mode .about-section p {
+    color: #ffffff;
+}
+body.dark-mode .about-section ul li{
+    color: #ffffff;
+}

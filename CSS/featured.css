@@ -376,3 +376,89 @@
         max-width: 200px;
     }
 }
+
+/* Dark Mode Styles */
+.dark-mode .main-body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-mode .offers-section,
+.dark-mode .destinations-section {
+    background: rgba(42, 42, 42, 0.95);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .dark-mode .offers-section,
+    .dark-mode .destinations-section {
+        background-color: rgba(42, 42, 42, 0.85);
+        backdrop-filter: blur(15px);
+    }
+}
+
+.dark-mode .section-heading .tagline {
+    color: #00c4cc;
+}
+
+.dark-mode .section-heading .title {
+    color: #ffffff;
+}
+
+.dark-mode .offers-subheading,
+.dark-mode .destinations-subheading {
+    color: #e0e0e0;
+}
+
+.dark-mode .offer-card,
+.dark-mode .destination-card {
+    background: #2a2a2a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .offer-card:hover,
+.dark-mode .destination-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .offer-content h3,
+.dark-mode .destination-content h3 {
+    color: #ffffff;
+}
+
+.dark-mode .offer-content p,
+.dark-mode .destination-content p {
+    color: #b0b0b0;
+}
+
+.dark-mode .destination-rating {
+    color: #b0b0b0;
+}
+
+.dark-mode .offer-info {
+    color: #b0b0b0;
+}
+
+.dark-mode .offer-info del {
+    color: #888888;
+}
+
+.dark-mode .countdown {
+    color: #ff6b6b;
+}
+
+.dark-mode .rating span {
+    color: #b0b0b0;
+}
+
+.dark-mode .filter-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.dark-mode .filter-btn:hover,
+.dark-mode .filter-btn.active {
+    background-color: #00c4cc;
+    color: #ffffff;
+}

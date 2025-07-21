@@ -179,3 +179,85 @@ body {
   background-color: #6c757d;
   color: white;
 }
+
+/* Dark Mode Styles */
+.dark-mode .booking-header h1 {
+    color: var(--primary-color);
+}
+
+.dark-mode .booking-subheading {
+    color: #e1e1e1;
+}
+
+.dark-mode .booking-form-container {
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid #444;
+}
+
+.dark-mode .form-group label {
+    color: #e1e1e1;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select {
+    background: #2a2a2a;
+    color: #e1e1e1;
+    border: 1px solid #555;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 196, 204, 0.3);
+}
+
+.dark-mode .insurance-option label {
+    color: #b1b1b1;
+}
+
+.dark-mode .submit-btn {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.dark-mode .submit-btn:hover {
+    background: #00a3af;
+    box-shadow: 0 4px 12px rgba(0, 196, 204, 0.3);
+}
+
+.dark-mode .popup-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .popup-box {
+    background: #2a2a2a;
+    color: #e1e1e1;
+    border: 1px solid #444;
+}
+
+.dark-mode .popup-box h2 {
+    color: var(--primary-color);
+}
+
+.dark-mode .popup-box p {
+    color: #b1b1b1;
+}
+
+.dark-mode #loginBtn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.dark-mode #loginBtn:hover {
+    background-color: #00a3af;
+}
+
+.dark-mode #closeBtn {
+    background-color: #555;
+    color: white;
+}
+
+.dark-mode #closeBtn:hover {
+    background-color: #666;
+}
