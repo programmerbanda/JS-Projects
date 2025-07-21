@@ -1385,6 +1385,14 @@ body, header, section, .navbar, .tour-card, .testimonial-card, .modal-content, .
   /* Dark mode responsive navbar */
   body.dark-mode .navbar-center-item {
     background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 1px 2px 1px #ffffff;
+    border: 1px solid #ffffff;
+  }
+
+  body.dark-mode .nav-link {
+    box-shadow: 1px 2px 1px #ffffff;
+    border: 1px solid #ffffff;
   }
   
   body.dark-mode .navbar-right-item {
@@ -1438,7 +1446,7 @@ body, header, section, .navbar, .tour-card, .testimonial-card, .modal-content, .
   .nav-link {
     width: 60%;
     text-align: center;
-    margin: 10px 0;
+    margin: 6px 0;
   }
   .nav-link a {
     color: #ffffff;
