@@ -1,8 +1,43 @@
+document.querySelectorAll('.scroll-track').forEach(container => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener('mousedown', e => {
+    isDown = true;
+    container.classList.add('active');
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    isDown = false;
+    container.classList.remove('active');
+  });
+
+  container.addEventListener('mouseup', () => {
+    isDown = false;
+    container.classList.remove('active');
+  });
+
+  container.addEventListener('mousemove', e => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    container.scrollLeft = scrollLeft - walk;
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".navbar-center-item");
-  const bookBtn = document.querySelector(".navbar-right-item");
-  const icon = hamburger.querySelector("i");
+  // hamburger
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar-center-item");
+const bookBtn = document.querySelector(".navbar-right-item");
+let icon = null;
+if (hamburger) {
+  icon = hamburger.querySelector("i");
+}
 
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
@@ -32,12 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   // Login & Sign Up
-  const loginBtn = document.querySelector(".login-btn");
-  // const signupBtn = document.querySelector('.signup-btn');
+const loginBtn = document.querySelector(".login-btn");
+// const signupBtn = document.querySelector('.signup-btn');
 
+if (loginBtn) {
   loginBtn.addEventListener("click", () => {
     window.location.href = "login.html";
   });
+}
 
   // signupBtn.addEventListener('click', ()=> {
   //   window.location.href = "sign-up.html"
@@ -129,12 +166,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const contactButton = document.querySelector("contact-button");
-  if (contactButton) {
-    contactButton.addEventListener("click", () => {
-      window.location.href = "contact.html";
-    });
-  };
+const contactButton = document.querySelector(".contact-button");
+if (contactButton) {
+  contactButton.addEventListener("click", () => {
+    window.location.href = "contact.html";
+  });
+}
 
   document.querySelectorAll(".destination-card").forEach((card) => {
     card.addEventListener("click", (e) => {
@@ -203,12 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Close modal on outside click and re-enable scrolling
-    window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      }
-    };
+const closeModal = (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+};
+window.addEventListener("click", closeModal);
   }
 
   // Chat Support System
