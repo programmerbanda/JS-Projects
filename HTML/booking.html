@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your next adventure with ExploreMore. Secure your tour, add insurance, and get ready for an unforgettable journey!">
+    <meta property="og:title" content="Booking - ExploreMore">
+    <meta property="og:description" content="Book your next adventure with ExploreMore. Secure your tour, add insurance, and get ready for an unforgettable journey!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exploremore.com/booking">
+    <meta property="og:image" content="/PNG/Trustpilot Logo PNG s.png">
     <title>Booking - ExploreMore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/CSS/booking.css">
@@ -47,52 +53,69 @@
             </div>
 
             <div class="booking-form-container">
-                <form class="booking-form">
+                <form class="booking-form" autocomplete="off" novalidate>
                     <div class="form-group">
-                        <label for="tour-name">Tour Name</label>
-                        <input type="text" id="tour-name" name="tour-name" placeholder="Select a tour" required>
+                        <label for="tour-name">Tour Name <span class="required-asterisk">*</span></label>
+                        <select id="tour-name" name="tour-name" aria-label="Select a tour" required>
+                            <option value="">Select a tour</option>
+                            <option value="Dubai Adventure">Dubai Adventure</option>
+                            <option value="Swiss Alps">Swiss Alps</option>
+                            <option value="Venice Romance">Venice Romance</option>
+                            <option value="Goa Beaches">Goa Beaches</option>
+                        </select>
+                        <div class="error-message" id="tour-name-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="travel-date">Travel Date</label>
-                        <input type="date" id="travel-date" name="travel-date" required>
+                        <label for="travel-date">Travel Date <span class="required-asterisk">*</span></label>
+                        <input type="date" id="travel-date" name="travel-date" aria-label="Travel Date" required>
+                        <div class="error-message" id="travel-date-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="return-date">Return Date</label>
-                        <input type="date" id="return-date" name="return-date" required>
+                        <label for="return-date">Return Date <span class="required-asterisk">*</span></label>
+                        <input type="date" id="return-date" name="return-date" aria-label="Return Date" required>
+                        <div class="error-message" id="return-date-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="adults">Adults</label>
-                        <input type="number" id="adults" name="adults" min="1" max="10" value="1" required>
+                        <label for="adults">Adults <span class="required-asterisk">*</span></label>
+                        <input type="number" id="adults" name="adults" min="1" max="10" value="1" aria-label="Number of adults" required>
+                        <div class="error-message" id="adults-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="children">Children</label>
-                        <input type="number" id="children" name="children" min="0" max="10" value="0" required>
+                        <input type="number" id="children" name="children" min="0" max="10" value="0" aria-label="Number of children" required>
+                        <div class="error-message" id="children-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="full-name">Full Name</label>
-                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                        <label for="full-name">Full Name <span class="required-asterisk">*</span></label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" aria-label="Full Name" required>
+                        <div class="error-message" id="full-name-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <label for="email">Email <span class="required-asterisk">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" aria-label="Email" required>
+                        <div class="error-message" id="email-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        <label for="phone">Phone Number <span class="required-asterisk">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" aria-label="Phone Number" required>
+                        <div class="error-message" id="phone-error" aria-live="polite"></div>
                     </div>
 
                     <div class="form-group">
                         <label>Insurance</label>
                         <div class="insurance-option">
-                            <input type="checkbox" id="insurance" name="insurance">
-                            <label for="insurance">Add Travel Insurance ($50)</label>
+                            <input type="checkbox" id="insurance" name="insurance" aria-label="Add Travel Insurance">
+                            <label for="insurance">Add Travel Insurance ($50)
+                                <i class="fas fa-info-circle insurance-tooltip" tabindex="0" aria-label="More info about insurance"></i>
+                            </label>
+                            <span class="tooltip-text" id="insuranceTooltip" style="display:none;">Covers medical emergencies, trip cancellations, and lost baggage.</span>
                         </div>
                     </div>
 
@@ -121,18 +144,14 @@
                 <p class="footer-description">Your gateway to unforgettable adventures and hidden gems across the globe.
                 </p>
                 <div class="trust-badges">
-                    <img src="/PNG//Trustpilot Logo PNG s.png">
-                    <img src="/PNG/TripAdvisor Excellence.png" alt="TripAdvisor Excellence">
+                    <img src="/PNG/Trustpilot Logo PNG s.png" alt="Trustpilot Rating" loading="lazy">
+                    <img src="/PNG/TripAdvisor Excellence.png" alt="TripAdvisor Excellence" loading="lazy">
                 </div>
                 <div class="footer-social">
-                    <a target="_blank" href="https://www/facebook.com" class="social-link"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a target="_blank" href="https://www.twitter.com" class="social-link"><i
-                            class="fab fa-twitter"></i></a>
-                    <a target="_blank" href="https://www.instagram.com" class="social-link"><i
-                            class="fab fa-instagram"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com" class="social-link"><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.facebook.com" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://www.twitter.com" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-section footer-links">
@@ -160,10 +179,10 @@
                 <div class="payment-methods">
                     <h5>We Accept</h5>
                     <div class="payment-icons">
-                        <img src="/PNG/visa-icon.svg" alt="Visa">
-                        <img src="/PNG/master-card-icon.svg" alt="Mastercard">
-                        <img src="/PNG/american-express.svg" alt="American Express">
-                        <img src="/PNG/bhim-app-icon.svg" alt="UPI">
+                        <img src="/PNG/visa-icon.svg" alt="Visa" loading="lazy">
+                        <img src="/PNG/master-card-icon.svg" alt="Mastercard" loading="lazy">
+                        <img src="/PNG/american-express.svg" alt="American Express" loading="lazy">
+                        <img src="/PNG/bhim-app-icon.svg" alt="UPI" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -177,7 +196,7 @@
                     <span>24/7 Live Support</span>
                 </div>
                 <div class="language-switcher">
-                    <select>
+                    <select id="languageSwitcher" aria-label="Select Language">
                         <option value="en">English</option>
                         <option value="hi">हिंदी</option>
                         <option value="mr">मराठी</option>
@@ -195,17 +214,14 @@
                 <div class="download-app">
                     <h5>Download Our App</h5>
                     <div class="app-stores">
-                        <a target="_blank" href="https://play.google.com/"><img src="/PNG/google-play-svgrepo-com.svg"
-                                alt="Google Play"></a>
-                        <a target="_blank" href="https://www.apple.com/in/app-store/"><img
-                                src="/PNG/app-store-svgrepo-com.svg" alt="App Store"></a>
+                        <a target="_blank" href="https://play.google.com/"><img src="/PNG/google-play-svgrepo-com.svg" alt="Google Play" loading="lazy"></a>
+                        <a target="_blank" href="https://www.apple.com/in/app-store/"><img src="/PNG/app-store-svgrepo-com.svg" alt="App Store" loading="lazy"></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 ExploreMore. All rights reserved.
-            </p>
+            <p class="footer-copyright">© <span id="copyrightYear"></span> ExploreMore. All rights reserved.</p>
         </div>
     </footer>
     <div class="support-icon pulse" id="supportIcon">
@@ -226,34 +242,107 @@
             <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-    <script src="/JS/app.js"></script>
-    <script src="/JS/form-validation.js"></script>
     <script>
-        window.addEventListener('load', () => {
-            const popup = document.getElementById("popup");
-            const closeBtn = document.getElementById("closeBtn");
-            const loginBtn = document.getElementById("loginBtn");
-
-            // Show popup after 1 second
-            setTimeout(() => {
-                popup.classList.add("show");
-            }, 500);
-
-            setTimeout(()=> {
-                popup.classList.remove("show")
-            }, 3500)
-
-            // Close the popup
-            closeBtn.addEventListener("click", () => {
-                popup.classList.remove("show");
-            });
-
-            // Handle Login Button (example action)
-            loginBtn.addEventListener("click", () => {
-                // Redirect to login page or open modal
-                window.location.href = "login.html"; // Change this to your actual login URL
-            });
+    // --- Professional Booking Form Inline JS ---
+    (function() {
+        const form = document.querySelector('.booking-form');
+        const submitBtn = form.querySelector('.submit-btn');
+        const fields = [
+            'tour-name', 'travel-date', 'return-date', 'adults', 'children', 'full-name', 'email', 'phone'
+        ];
+        // Error fade-in/out
+        function showError(id, msg) {
+            const el = document.getElementById(id+'-error');
+            if (el) {
+                el.textContent = msg;
+                el.style.opacity = 0;
+                el.style.display = 'block';
+                setTimeout(() => { el.style.transition = 'opacity 0.3s'; el.style.opacity = 1; }, 10);
+            }
+        }
+        function clearError(id) {
+            const el = document.getElementById(id+'-error');
+            if (el && el.textContent) {
+                el.style.opacity = 0;
+                setTimeout(() => { el.textContent = ''; el.style.display = 'none'; }, 300);
+            }
+        }
+        // Validate
+        function validate() {
+            let valid = true;
+            // Tour
+            if (!form['tour-name'].value) { showError('tour-name', 'Please select a tour'); valid = false; } else clearError('tour-name');
+            // Name
+            if (form['full-name'].value.trim().length < 2) { showError('full-name', 'Name must be at least 2 characters'); valid = false; } else clearError('full-name');
+            // Email
+            const email = form['email'].value.trim();
+            if (!/^\S+@\S+\.\S+$/.test(email)) { showError('email', 'Please enter a valid email address'); valid = false; } else clearError('email');
+            // Phone
+            const phone = form['phone'].value.trim();
+            if (!/^[+]?[0-9]{10,15}$/.test(phone)) { showError('phone', 'Please enter a valid phone number'); valid = false; } else clearError('phone');
+            // Dates
+            const today = new Date();
+            const travel = new Date(form['travel-date'].value);
+            const ret = new Date(form['return-date'].value);
+            if (!form['travel-date'].value || travel <= today) { showError('travel-date', 'Travel date must be in the future'); valid = false; } else clearError('travel-date');
+            if (!form['return-date'].value || ret <= travel) { showError('return-date', 'Return date must be after travel date'); valid = false; } else clearError('return-date');
+            // Adults
+            if (parseInt(form['adults'].value) < 1) { showError('adults', 'At least 1 adult required'); valid = false; } else clearError('adults');
+            // Children (no error, just clear)
+            clearError('children');
+            return valid;
+        }
+        // Clear error on input
+        fields.forEach(id => {
+            const el = form[id];
+            if (el) {
+                el.addEventListener('input', () => clearError(id));
+                el.addEventListener('blur', () => clearError(id));
+            }
         });
+        // Submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!validate()) return;
+            submitBtn.disabled = true;
+            // Success modal
+            const modal = document.createElement('div');
+            modal.className = 'success-modal';
+            modal.innerHTML = `<div class='modal-content'><h2>Booking Confirmed!</h2><p>Your booking has been saved successfully.</p><button id='closeSuccessModal'>OK</button></div>`;
+            modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;justify-content:center;align-items:center;z-index:1000;';
+            document.body.appendChild(modal);
+            document.getElementById('closeSuccessModal').onclick = function() {
+                modal.remove();
+            };
+            setTimeout(() => { if (modal.parentNode) modal.remove(); }, 5000);
+            form.reset();
+            submitBtn.disabled = false;
+        });
+        // Tooltip fade-in/out
+        const infoIcon = document.querySelector('.insurance-tooltip');
+        const tooltip = document.getElementById('insuranceTooltip');
+        if(infoIcon && tooltip) {
+            function showTip() { tooltip.style.display = 'inline'; tooltip.style.opacity = 0; setTimeout(()=>{tooltip.style.transition='opacity 0.3s'; tooltip.style.opacity=1;},10); }
+            function hideTip() { tooltip.style.opacity = 0; setTimeout(()=>{tooltip.style.display='none';},300); }
+            infoIcon.addEventListener('focus', showTip);
+            infoIcon.addEventListener('blur', hideTip);
+            infoIcon.addEventListener('mouseover', showTip);
+            infoIcon.addEventListener('mouseout', hideTip);
+        }
+    })();
+    // Copyright year auto-update
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    });
+    // Language switcher dummy action
+    document.getElementById('languageSwitcher').addEventListener('change', function() {
+        alert('Language switching coming soon!');
+    });
+    // Highlight Book Now if on booking page
+    document.addEventListener('DOMContentLoaded', function() {
+        const bookBtn = document.querySelector('.book-now-btn');
+        if(bookBtn) bookBtn.classList.add('active-booking');
+    });
     </script>
 
 </body>

@@ -84,19 +84,34 @@ body {
     border-color: var(--primary-color);
 }
 
+.required-asterisk {
+    color: #ff5252;
+    margin-left: 2px;
+    font-size: 16px;
+}
+
 .insurance-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    position: relative;
 }
-
-.insurance-option input {
-    margin: 0;
+.insurance-tooltip {
+    color: #00c4cc;
+    margin-left: 6px;
+    cursor: pointer;
+    font-size: 16px;
 }
-
-.insurance-option label {
-    font-weight: normal;
-    color: #a9b7c3;
+.tooltip-text {
+    background: #222;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 10;
+    display: none;
 }
 
 .submit-btn {
@@ -112,6 +127,14 @@ body {
 
 .submit-btn:hover {
     background: #00a3af;
+}
+
+.book-now-btn.active-booking {
+    box-shadow: 0 0 0 3px #00c4cc44;
+    border: 2px solid #00c4cc;
+    background: linear-gradient(135deg, #00c4cc 80%, #0077ff 100%);
+    color: #fff;
+    font-weight: bold;
 }
 
 /* Popup Overlay */

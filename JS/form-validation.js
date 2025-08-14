@@ -17,20 +17,21 @@ class FormValidator {
 
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
+            const tour = document.getElementById('tour-name').value;
             const name = document.getElementById('full-name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const travelDate = document.getElementById('travel-date').value;
             const returnDate = document.getElementById('return-date').value;
 
-            if (!this.validateBookingForm(name, email, phone, travelDate, returnDate)) {
+            if (!this.validateBookingForm(tour, name, email, phone, travelDate, returnDate)) {
                 return;
             }
 
             // Store booking data in localStorage
             this.saveBookingData({
-                name, email, phone, travelDate, returnDate,
+                tour, name, email, phone, travelDate, returnDate,
                 adults: document.getElementById('adults').value,
                 children: document.getElementById('children').value,
                 insurance: document.getElementById('insurance').checked,
@@ -42,44 +43,43 @@ class FormValidator {
         });
     }
 
-    validateBookingForm(name, email, phone, travelDate, returnDate) {
+    validateBookingForm(tour, name, email, phone, travelDate, returnDate) {
         let isValid = true;
 
+        // Tour validation
+        if (!tour) {
+            this.showError('tour-name', 'Please select a tour');
+            isValid = false;
+        }
         // Name validation
         if (name.length < 2) {
             this.showError('full-name', 'Name must be at least 2 characters');
             isValid = false;
         }
-
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             this.showError('email', 'Please enter a valid email address');
             isValid = false;
         }
-
         // Phone validation
         const phoneRegex = /^[+]?[0-9]{10,15}$/;
         if (!phoneRegex.test(phone)) {
             this.showError('phone', 'Please enter a valid phone number');
             isValid = false;
         }
-
         // Date validation
         const today = new Date();
         const travel = new Date(travelDate);
         const returnD = new Date(returnDate);
-
         if (travel <= today) {
             this.showError('travel-date', 'Travel date must be in the future');
             isValid = false;
         }
-
         if (returnD <= travel) {
             this.showError('return-date', 'Return date must be after travel date');
             isValid = false;
         }
-
         return isValid;
     }
 
